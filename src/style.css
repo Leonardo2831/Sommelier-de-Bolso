@@ -1,0 +1,14 @@
+@import 'tailwindcss';
+
+/* @theme {
+    
+} */
+
+@utility container {
+    padding: 10px;
+    max-width: 1024px;
+}
+
+@layer {
+    
+}
