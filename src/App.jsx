@@ -1,12 +1,25 @@
 import React from "react";
 
 export default function App(){
-    const [count, setCount] = React.useState(0);
+    const [mode, setMode] = React.useState(() => {
+        return localStorage.getItem("mode") || '';
+    });
+
+    React.useEffect(() => {
+        localStorage.mode = mode;
+
+        const html = document.documentElement;
+        html.classList.toggle('dark');
+    }, [mode]);
+
+    const toggleMode = () => {
+        setMode(mode === 'dark' ? '' : 'dark');
+    }
 
     return (
         <button 
-            onClick={() => {setCount(count + 1)}} 
-            className="px-4 py-1 bg-blue-900 text-blue-200">Clique aqui! {count}
+            onClick={toggleMode} 
+            className="px-4 py-1 bg-gold text-white cursor-pointer dark:bg-maple dark:text-beige">Clique aqui! modo: {mode || 'light'}
         </button>
     );
 }
