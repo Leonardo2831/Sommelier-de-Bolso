@@ -1,4 +1,5 @@
 import React from "react";
+import Header from './components/Header.jsx';
 
 export default function App(){
     const [mode, setMode] = React.useState(() => {
@@ -17,9 +18,13 @@ export default function App(){
     }
 
     return (
-        <button 
-            onClick={toggleMode} 
-            className="px-4 py-1 bg-gold text-white cursor-pointer dark:bg-maple dark:text-beige">Clique aqui! modo: {mode || 'light'}
-        </button>
+        // <> necessário, pois o componente retorna teóricamente 1 item apenas, logo é necessário retornar o elemento pai.
+        <>
+            <Header></Header>
+            <button 
+                onClick={toggleMode} 
+                className="px-4 py-1 bg-gold text-white cursor-pointer dark:bg-maple dark:text-beige">Clique aqui! modo: {mode || 'light'}
+            </button>
+        </>
     );
 }
