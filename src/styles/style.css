@@ -1,0 +1,28 @@
+@import 'tailwindcss';
+
+@theme {
+    --color-gold: #C3A576;
+
+    --color-lack: #141414;
+    --color-gray: #2D2D2D;
+
+    --color-white: #FFFFFF;
+    --color-cream: #F3EEE6;
+    --beige: #DFD3C0;
+
+    --color-red: #AE1C1C;
+    --color-maple: #5A2323;
+    
+    --font-serif: "Cormorant Garamond", serif;
+    --font-sans: "Open Sans", sans-serif;
+}
+
+/* @utility container {
+    padding: 10px;
+    margin: 0 auto;
+    max-width: 1024px;
+} */
+
+@layer {
+    
+}
