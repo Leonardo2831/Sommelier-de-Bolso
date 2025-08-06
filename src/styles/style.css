@@ -19,14 +19,18 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* @utility container {
+@utility container {
     padding: 10px;
     margin: 0 auto;
     max-width: 1024px;
-} */
+}
 
 @layer {
+    body{
+        @apply bg-cream dark:bg-background-black;
+    }
+
     #root{
-        @apply container bg-background-black min-h-screen;
+        @apply container min-h-screen;
     }
 }
