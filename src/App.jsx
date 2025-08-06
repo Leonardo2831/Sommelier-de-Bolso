@@ -2,7 +2,7 @@ import React from "react";
 
 export default function App(){
     const [mode, setMode] = React.useState(() => {
-        return localStorage.getItem("mode") || '';
+        return localStorage.mode || '';
     });
 
     React.useEffect(() => {
