@@ -1,4 +1,3 @@
-import React from 'react';
 import SubMenu from '../SubMenu.jsx';
 
 const LinksNav = () => {
@@ -8,8 +7,13 @@ const LinksNav = () => {
             <li>
                 <p>Vinhos</p>
                 <SubMenu 
-                    options={['Barricas', 'Aromas']}>
-                </SubMenu>
+                    options={
+                        [
+                            { text: 'Barricas', link: '#link1'}, 
+                            { text: 'Aromas', link: '#link2'}
+                        ]
+                    } 
+                />
             </li>
             <li>
                 <a href="#">Uvas</a>
