@@ -4,7 +4,7 @@
     --color-gold: #C3A576;
 
     --color-background-black: #141414;
-    --color-gray: #2D2D2D;
+    --color-gray: #202020;
 
     --color-white: #F6F6F6;
     --color-cream: #F3EEE6;
@@ -32,5 +32,10 @@
 
     #root{
         @apply container min-h-screen;
+    }
+
+    /* styles js */
+    input:checked + [data-mode]{
+        transform: translate(67px);
     }
 }
