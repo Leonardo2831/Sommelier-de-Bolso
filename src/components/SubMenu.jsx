@@ -1,15 +1,17 @@
-import React from 'react';
-
 // deve desestruturar, pois os valores são passados dentro de um objeto
 const SubMenu = ({options}) => {
     return (
-        <ul>
-            {options.map((option, index) => {
-                const link = '#';
+        <ul>           
+            {options.map((option, index) => {  
+                const {text, link, element} = option;
 
-                <li key={index}>
-                    <a href={link}>{option}</a>
-                </li>
+                return (
+                    <li key={index}>
+                        {
+                            element ? element : link && text ? <a href={link}>{text}</a> : text
+                        }
+                    </li>
+                )
             })}
         </ul>
     )
