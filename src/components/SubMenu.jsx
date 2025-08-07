@@ -1,7 +1,7 @@
 // deve desestruturar, pois os valores são passados dentro de um objeto
 const SubMenu = ({options}) => {
     return (
-        <ul className="shadow absolute top-full -left-full 
+        <ul data-subMenu className="shadow absolute top-full -left-full 
         hidden flex-col items-center gap-3 w-[200px]
         p-3 rounded-b-lg
         bg-beige dark:bg-gray">           
