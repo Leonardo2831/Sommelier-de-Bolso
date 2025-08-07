@@ -3,8 +3,10 @@
 @theme {
     --color-gold: #C3A576;
 
+    --color-black: #111111;
     --color-background-black: #141414;
     --color-gray: #202020;
+    --color-light-gray: #404040;
 
     --color-white: #F6F6F6;
     --color-cream: #F3EEE6;
@@ -12,6 +14,8 @@
 
     --color-red: #AE1C1C;
     --color-maple: #5A2323;
+
+    --color-shadow: rgba(0, 0, 0, 0.2);
     
     --font-serif: "Cormorant Garamond", serif;
     --font-sans: "Open Sans", sans-serif;
@@ -20,18 +24,21 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @utility container {
-    padding: 10px;
     margin: 0 auto;
     max-width: 1024px;
 }
 
 @layer {
     body{
-        @apply bg-cream dark:bg-background-black font-serif;
+        @apply bg-white dark:bg-black font-serif;
     }
 
     #root{
-        @apply container min-h-screen;
+        @apply container min-h-screen bg-cream dark:bg-background-black;
+    }
+
+    .shadow{
+        box-shadow: -1px 1px 2px var(--color-shadow);
     }
 
     /* styles js */
