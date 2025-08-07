@@ -8,14 +8,14 @@ const Logo = () => {
     const urlLogo = '/icons/logo.png';
     const altLogo = 'Sommelier de Bolso';
 
-    const {openMenu} = useAppContext();
+    const { openMenu } = useAppContext();
 
     return (
         <figure onClick={openMenu} className='relative max-w-[100px] p-[10px] cursor-pointer'>
             <img className='w-full' src={urlLogo} alt={altLogo} />
             <SubMenu options={
                 [
-                    {text: 'Configurações'},
+                    {text: 'Configurações', link: '#config'},
                     {element: <ButtonToggleMode/>}
                 ]
             } />
