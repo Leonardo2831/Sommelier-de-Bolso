@@ -45,4 +45,8 @@
     input:checked + [data-mode]{
         transform: translate(67px);
     }
+
+    li:hover > [data-subMenu]{
+        @apply flex;
+    }
 }
