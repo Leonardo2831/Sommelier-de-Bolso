@@ -5,24 +5,42 @@ const ButtonToggleMode = () => {
     const { mode , setMode } = useAppContext();
     const classMode = 'dark';
 
+    console.log(mode);
+    console.log(localStorage.mode);
+
     React.useEffect(() => {
         localStorage.mode = mode;
-
         const html = document.documentElement;
-        html.classList.toggle(classMode);
+
+        if(mode === 'dark'){
+            html.classList.remove(classMode);
+        } else {
+            html.classList.add(classMode);
+        }
     }, [mode]);
 
-    const toggleMode = () => {
-        setMode(mode === classMode ? '' : classMode);
+    const toggleMode = ({target}) => {
+        if(target.checked){
+            setMode(classMode);
+        } else {
+            setMode('');
+        }
     }
 
     return (
-        <button 
-            className="px-4 py-1 bg-gold text-white dark:bg-maple dark:text-cream" 
-            onClick={toggleMode}
+        <label 
+            htmlFor="toggleMode"
+            className='px-4 py-2 bg-gold rounded-lg text-white dark:bg-maple dark:text-cream'
         >
-            Clique aqui! {mode || 'light'}
-        </button>
+            <input 
+                onClick={toggleMode}
+                className='hidden'
+                type="checkbox" 
+                name='toggleMode' 
+                id='toggleMode' 
+            />
+            teste
+        </label>
     )
 }
 
