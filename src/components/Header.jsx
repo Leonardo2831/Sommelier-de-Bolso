@@ -1,10 +1,9 @@
-import React from 'react';
 import LinksNav from './header/LinksNav.jsx';
 import Logo from './Logo.jsx';
 
 const Header = () => {
     return ( 
-        <header>
+        <header className='flex justify-between items-center text-maple dark:text-gold'>
             <nav>
                 <LinksNav/>
             </nav>
