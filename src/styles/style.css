@@ -27,7 +27,7 @@
 
 @layer {
     body{
-        @apply bg-cream dark:bg-background-black;
+        @apply bg-cream dark:bg-background-black font-serif;
     }
 
     #root{
