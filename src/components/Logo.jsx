@@ -1,7 +1,8 @@
 import React from 'react';
 
 const Logo = () => {
-    const urlLogo = '/public/icons/logo.png';
+    // não usar public, pois a pasta public é ignorada pelo browser
+    const urlLogo = '/icons/logo.png';
     return (
         <figure>
             <img src={urlLogo} alt="Sommelier de Bolso" />
