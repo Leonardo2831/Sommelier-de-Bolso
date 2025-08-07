@@ -11,8 +11,8 @@ const Logo = () => {
     const { openMenu } = useAppContext();
 
     return (
-        <figure onClick={openMenu} className='relative max-w-[100px] p-[10px] cursor-pointer'>
-            <img className='w-full' src={urlLogo} alt={altLogo} />
+        <figure onClick={openMenu} className='relative w-[100px] p-[10px] cursor-pointer'>
+            <img className='max-w-[100px]' src={urlLogo} alt={altLogo} />
             <SubMenu options={
                 [
                     {text: 'Configurações', link: '#config'},
