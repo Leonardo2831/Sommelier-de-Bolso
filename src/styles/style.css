@@ -19,6 +19,9 @@
     
     --font-serif: "Cormorant Garamond", serif;
     --font-sans: "Open Sans", sans-serif;
+
+    /* animations */
+    --animate-showDown: show-down 0.3s forwards;
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -26,6 +29,19 @@
 @utility container {
     margin: 0 auto;
     max-width: 1024px;
+}
+
+/* keyframes */
+@keyframes show-down {
+    0%{
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @layer {
@@ -46,7 +62,11 @@
         transform: translate(67px);
     }
 
-    li:hover > [data-subMenu]{
-        @apply flex;
+    [data-button-menu]:hover > [data-sub-menu]{
+        @apply flex animate-showDown;
+    }
+
+    [data-sub-menu="open"]{
+        @apply flex animate-showDown;
     }
 }
