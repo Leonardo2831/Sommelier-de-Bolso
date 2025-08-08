@@ -7,16 +7,8 @@ const AppProvider = ({ children }) => {
         return localStorage.mode || '';
     });
 
-    // open sub-menu
-    function openMenu({currentTarget}){
-        if(currentTarget.children.length){
-            currentTarget.children[currentTarget.children.length - 1].classList.toggle('hidden');
-            currentTarget.children[currentTarget.children.length - 1].classList.toggle('flex');
-        }
-    }
-
     return (
-        <AppContext.Provider value={{ mode , setMode, openMenu }}>
+        <AppContext.Provider value={{ mode , setMode }}>
             {children}
         </AppContext.Provider>
     )
