@@ -1,7 +1,8 @@
 // deve desestruturar, pois os valores são passados dentro de um objeto
-const SubMenu = ({ options, refProp }) => {
+const SubMenu = ({ options }, ref) => {
+
     return (
-        <ul ref={refProp} data-sub-menu className="shadow absolute top-full -left-full 
+        <ul data-sub-menu ref={ref} className="shadow absolute top-full -left-full 
         flex flex-col items-center gap-3 w-[200px]
         p-3 rounded-b-lg
         bg-beige dark:bg-gray">           
