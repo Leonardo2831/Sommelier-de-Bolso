@@ -8,15 +8,12 @@ const Logo = () => {
 
     const [open, setOpen] = React.useState(false);
     const menuRef = React.useRef();
-    const logoRef = React.useRef();
 
     React.useEffect(() => {
         const clickOutside = (event) => {        
             if (
                 menuRef.current &&
-                !menuRef.current.contains(event.target) ||
-                logoRef.current &&
-                logoRef.current.contains(event.target)
+                !menuRef.current.contains(event.target)
             ) {
                 menuRef.current.classList.remove('active');
                 setOpen(false);
@@ -33,7 +30,6 @@ const Logo = () => {
 
     return (
         <figure
-            ref={logoRef}
             onClick={
                 (event) => {
                     event.stopPropagation(); 
