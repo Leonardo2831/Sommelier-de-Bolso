@@ -1,43 +1,57 @@
 import React from "react";
-
 import ButtonToggleMode from "./header/ButtonToggleMode";
 import SubMenu from "./SubMenu";
 
 const Logo = () => {
-    // não usar public, pois a pasta public é ignorada pelo browser
     const urlLogo = '/icons/logo.png';
     const altLogo = 'Sommelier de Bolso';
 
-    const [ menuOpened, setMenuOpened ] = React.useState(false);
+    const [open, setOpen] = React.useState(false);
     const menuRef = React.useRef();
+    const logoRef = React.useRef();
 
     React.useEffect(() => {
-        const html = document.documentElement;
-        let clickOutside = ({ target }) => {
-            if(target){
-                setMenuOpened(false);
+        const clickOutside = (event) => {        
+            if (
+                menuRef.current &&
+                !menuRef.current.contains(event.target) ||
+                logoRef.current &&
+                logoRef.current.contains(event.target)
+            ) {
+                menuRef.current.classList.remove('active');
+                setOpen(false);
             }
+        };
+
+        if(open){
+            menuRef.current.classList.add('active');
         }
 
-        console.log(menuRef);
-        
-
-        html.addEventListener('mousedown', clickOutside);
-    });
-    
+        document.addEventListener('click', clickOutside);
+        return () => document.removeEventListener('click', clickOutside);
+    }, [open]);
 
     return (
-        <figure onClick={() => {setMenuOpened(!menuOpened)}} className='relative w-[100px] p-[10px] cursor-pointer'>
-            <img className='max-w-[100px]' src={urlLogo} alt={altLogo} />
-            {menuOpened && <SubMenu
-                ref={menuRef} 
+        <figure
+            ref={logoRef}
+            onClick={
+                (event) => {
+                    event.stopPropagation(); 
+                    setOpen(!open);
+                }
+            }
+            className="relative w-[100px] p-[10px] cursor-pointer"
+        >
+            <img className="max-w-[100px]" src={urlLogo} alt={altLogo} />
+            <SubMenu
+                ref={menuRef}
                 options={[
-                    {text: 'Configurações'},
-                    {element: <ButtonToggleMode/>}
-                ]} 
-                />}
+                    { text: 'Configurações' },
+                    { element: <ButtonToggleMode /> }
+                ]}
+            />
         </figure>
-    )
-}
+    );
+};
 
 export default Logo;
