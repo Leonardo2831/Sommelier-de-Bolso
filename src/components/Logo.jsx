@@ -9,7 +9,7 @@ const Logo = () => {
     const altLogo = 'Sommelier de Bolso';
 
     const [open, setOpen] = React.useState(false);
-    const menuRef = React.useRef();
+    const menuRef = React.useRef(null);
 
     React.useEffect(() => {
         initClickOutside(open, setOpen, menuRef);
@@ -28,6 +28,7 @@ const Logo = () => {
             <img className="max-w-[100px]" src={urlLogo} alt={altLogo} />
             <SubMenu
                 ref={menuRef}
+                transform="left-valueLogo"
                 options={[
                     { text: 'Configurações' },
                     { element: <ButtonToggleMode /> }
