@@ -1,0 +1,170 @@
+[
+    {
+        "Nome": "Chianti Classico Riserva",
+        "Image": "https://site-oficial.it/chianti-riserva.png",
+        "TempoBarrica": "24 meses",
+        "País": "Itália",
+        "Uva": "Sangiovese"
+    },
+    {
+        "Nome": "Barolo DOCG",
+        "Image": "https://site-oficial.it/barolo-docg.png",
+        "TempoBarrica": "36 meses",
+        "País": "Itália",
+        "Uva": "Nebbiolo"
+    },
+    {
+        "Nome": "Amarone della Valpolicella",
+        "Image": "https://site-oficial.it/amarone-valpolicella.png",
+        "TempoBarrica": "30 meses",
+        "País": "Itália",
+        "Uva": "Corvina"
+    },
+    {
+        "Nome": "Brunello di Montalcino",
+        "Image": "https://site-oficial.it/brunello-montalcino.png",
+        "TempoBarrica": "36 meses",
+        "País": "Itália",
+        "Uva": "Sangiovese"
+    },
+    {
+        "Nome": "Prosecco Superiore DOCG",
+        "Image": "https://site-oficial.it/prosecco-docg.png",
+        "TempoBarrica": null,
+        "País": "Itália",
+        "Uva": "Glera"
+    },
+    {
+        "Nome": "Cabernet Sauvignon Concha y Toro",
+        "Image": "https://site-oficial.cl/cabernet-concha-toro.png",
+        "TempoBarrica": "12 meses",
+        "País": "Chile",
+        "Uva": "Cabernet Sauvignon"
+    },
+    {
+        "Nome": "Carmenere Gran Reserva",
+        "Image": "https://site-oficial.cl/carmenere-gran-reserva.png",
+        "TempoBarrica": "14 meses",
+        "País": "Chile",
+        "Uva": "Carmenere"
+    },
+    {
+        "Nome": "Casillero del Diablo Merlot",
+        "Image": "https://site-oficial.cl/casillero-merlot.png",
+        "TempoBarrica": "9 meses",
+        "País": "Chile",
+        "Uva": "Merlot"
+    },
+    {
+        "Nome": "Montes Alpha Syrah",
+        "Image": "https://site-oficial.cl/montes-alpha-syrah.png",
+        "TempoBarrica": "12 meses",
+        "País": "Chile",
+        "Uva": "Syrah"
+    },
+    {
+        "Nome": "Undurraga Chardonnay",
+        "Image": "https://site-oficial.cl/undurraga-chardonnay.png",
+        "TempoBarrica": null,
+        "País": "Chile",
+        "Uva": "Chardonnay"
+    },
+    {
+        "Nome": "Opus One",
+        "Image": "https://site-oficial.us/opus-one.png",
+        "TempoBarrica": "18 meses",
+        "País": "Estados Unidos",
+        "Uva": "Cabernet Sauvignon"
+    },
+    {
+        "Nome": "Robert Mondavi Chardonnay",
+        "Image": "https://site-oficial.us/robert-mondavi-chardonnay.png",
+        "TempoBarrica": "10 meses",
+        "País": "Estados Unidos",
+        "Uva": "Chardonnay"
+    },
+    {
+        "Nome": "Silver Oak Cabernet Sauvignon",
+        "Image": "https://site-oficial.us/silver-oak-cabernet.png",
+        "TempoBarrica": "24 meses",
+        "País": "Estados Unidos",
+        "Uva": "Cabernet Sauvignon"
+    },
+    {
+        "Nome": "Duckhorn Merlot",
+        "Image": "https://site-oficial.us/duckhorn-merlot.png",
+        "TempoBarrica": "15 meses",
+        "País": "Estados Unidos",
+        "Uva": "Merlot"
+    },
+    {
+        "Nome": "Kendall-Jackson Vintner's Reserve Pinot Noir",
+        "Image": "https://site-oficial.us/kendall-jackson-pinot-noir.png",
+        "TempoBarrica": "9 meses",
+        "País": "Estados Unidos",
+        "Uva": "Pinot Noir"
+    },
+    {
+        "Nome": "Château Margaux",
+        "Image": "https://site-oficial.fr/chateau-margaux.png",
+        "TempoBarrica": "24 meses",
+        "País": "França",
+        "Uva": "Cabernet Sauvignon"
+    },
+    {
+        "Nome": "Château Lafite Rothschild",
+        "Image": "https://site-oficial.fr/chateau-lafite.png",
+        "TempoBarrica": "20 meses",
+        "País": "França",
+        "Uva": "Cabernet Sauvignon"
+    },
+    {
+        "Nome": "Château Mouton Rothschild",
+        "Image": "https://site-oficial.fr/chateau-mouton.png",
+        "TempoBarrica": "22 meses",
+        "País": "França",
+        "Uva": "Cabernet Sauvignon"
+    },
+    {
+        "Nome": "Domaine de la Romanée-Conti",
+        "Image": "https://site-oficial.fr/romanee-conti.png",
+        "TempoBarrica": "16 meses",
+        "País": "França",
+        "Uva": "Pinot Noir"
+    },
+    {
+        "Nome": "Chablis Grand Cru",
+        "Image": "https://site-oficial.fr/chablis-grand-cru.png",
+        "TempoBarrica": null,
+        "País": "França",
+        "Uva": "Chardonnay"
+    },
+    {
+        "Nome": "Miolo Reserva Pinot Noir",
+        "Image": "https://www.miolo.com.br/media/wines/miolo_reserva_pinot_noir.png",
+        "TempoBarrica": "12 meses",
+        "País": "Brasil",
+        "Uva": "Pinot Noir"
+    },
+    {
+        "Nome": "Casa Valduga Gran Reserva Merlot",
+        "Image": "https://www.casavalduga.com.br/media/wines/gran_reserva_merlot.png",
+        "TempoBarrica": "14 meses",
+        "País": "Brasil",
+        "Uva": "Merlot"
+    },
+    {
+        "Nome": "Salton Volpi Cabernet Sauvignon",
+        "Image": "https://www.salton.com.br/media/wines/volpi_cabernet_sauvignon.png",
+        "TempoBarrica": "10 meses",
+        "País": "Brasil",
+        "Uva": "Cabernet Sauvignon"
+    },
+    {
+        "Nome": "Vale dos Vinhedos Chardonnay",
+        "Image": "https://www.valedosvinhedos.com.br/media/wines/chardonnay.png",
+        "TempoBarrica": null,
+        "País": "Brasil",
+        "Uva": "Chardonnay"
+    }
+]
