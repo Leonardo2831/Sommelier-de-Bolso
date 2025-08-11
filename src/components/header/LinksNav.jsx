@@ -1,4 +1,5 @@
 import React from 'react';
+import initClickOutside from '../../javascript/clickOutside.js';
 
 import SubMenu from '../SubMenu.jsx';
 
@@ -8,12 +9,8 @@ const LinksNav = () => {
     const refMenu = React.useRef(null);
 
     React.useEffect(() => {
-        console.log(menuOpened);
-        
-        function clickOutside(){
-            console.log(refMenu.current);
-        }
-    }, [menuOpened]);
+        initClickOutside(open, setOpen, menuRef);
+    }, [open]);
 
     return (
         <ul className='flex flex-wrap items-center gap-5 *:p-2 *:cursor-pointer'>

@@ -1,4 +1,6 @@
 import React from "react";
+import initClickOutside from "../javascript/clickOutside.js";
+
 import ButtonToggleMode from "./header/ButtonToggleMode";
 import SubMenu from "./SubMenu";
 
@@ -10,22 +12,7 @@ const Logo = () => {
     const menuRef = React.useRef();
 
     React.useEffect(() => {
-        const clickOutside = (event) => {        
-            if (
-                menuRef.current &&
-                !menuRef.current.contains(event.target)
-            ) {
-                menuRef.current.classList.remove('active');
-                setOpen(false);
-            }
-        };
-
-        if(open){
-            menuRef.current.classList.add('active');
-        }
-
-        document.addEventListener('click', clickOutside);
-        return () => document.removeEventListener('click', clickOutside);
+        initClickOutside(open, setOpen, menuRef);
     }, [open]);
 
     return (
