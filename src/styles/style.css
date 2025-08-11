@@ -73,4 +73,12 @@
     [data-sub-menu].active {
         @apply flex animate-showDown;
     }
+
+    .left-valueLogo{
+        @apply -left-full;
+    }
+
+    .left-valueLinks{
+        @apply -left-1/2;
+    }
 }
