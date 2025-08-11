@@ -4,9 +4,9 @@ import initClickOutside from '../../javascript/clickOutside.js';
 import SubMenu from '../SubMenu.jsx';
 
 const LinksNav = () => {
-    const [ menuOpened, setMenuOpened ] = React.useState(false);
+    const [open, setOpen] = React.useState(false);
 
-    const refMenu = React.useRef(null);
+    const menuRef = React.useRef(null);
 
     React.useEffect(() => {
         initClickOutside(open, setOpen, menuRef);
@@ -17,17 +17,18 @@ const LinksNav = () => {
             <li>
                 <a href="/index.html">Home</a>
             </li>
-            <li onClick={() => {setMenuOpened(!menuOpened)}} data-button-menu className='relative'>
+            <li onClick={() => {setOpen(!open)}} data-button-menu className='relative'>
                 <p>Vinhos</p>
-                {menuOpened && <SubMenu 
-                    refProp={refMenu} 
+                <SubMenu 
+                    ref={menuRef}
+                    transform="left-valueLinks"
                     options={
                         [
                             { text: 'Barricas', link: '#link1'}, 
                             { text: 'Aromas', link: '#link2'}
                         ]
                     } 
-                />}
+                />
             </li>
             <li>
                 <a href="#">Uvas</a>
