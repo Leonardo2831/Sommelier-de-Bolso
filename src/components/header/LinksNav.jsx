@@ -25,13 +25,11 @@ const LinksNav = () => {
                     options={
                         [
                             { text: 'Barricas', link: '#link1'}, 
-                            { text: 'Aromas', link: '#link2'}
+                            { text: 'Aromas', link: '#link2'},
+                            { text: 'uvas', link: '#uvas'},
                         ]
                     } 
                 />
-            </li>
-            <li>
-                <a href="#">Uvas</a>
             </li>
             <li>
                 <a href="#">Terroir</a>
