@@ -13,7 +13,7 @@ const LinksNav = () => {
     }, [open]);
 
     return (
-        <ul className='flex flex-wrap items-center gap-5 *:p-2 *:cursor-pointer *:hover:text-red *:transition-colors *:duration-200'>
+        <ul className='flex flex-wrap items-center gap-5 *:p-2 *:text-[32px] *:font-medium *:cursor-pointer *:hover:text-red *:transition-colors *:duration-200'>
             <li>
                 <a href="/index.html">Home</a>
             </li>

@@ -16,7 +16,7 @@ const SubMenu = React.forwardRef(function SubMenu({ options, transform }, ref) {
 
                 return (
                     <li key={index} 
-                    className='w-full p-2 flex items-center justify-center font-medium text-xl'>
+                    className='w-full p-2 flex items-center justify-center capitalize text-2xl font-medium'>
                         {
                             element ? element : link 
                             && text ? <a className="w-full text-center font-medium" href={link}>{text}</a> 
