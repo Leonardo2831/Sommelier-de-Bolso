@@ -24,12 +24,12 @@
         "image": "/images/wines/Carmín de Peumo.png"
     },
     {
-        "name": "Casillero del Diablo Cabernet Sauvignon",
+        "name": "Casillero del Diablo Cabernet Suavignon",
         "grape": " Cabernet Sauvignon",
         "timeBarrel": 8,
         "country": "Chile",
         "region": "Valle Central",
-        "image": "/images/wines/Casillero del Diablo Cabernet Sauvignon.png"
+        "image": "/images/wines/Casillero del Diablo Cabernet Suavignon.png"
     },
     {
         "name": "Casillero del Diablo Sauvignon Blanc",
@@ -64,12 +64,12 @@
         "image": "/images/wines/Chandon Réserve Brut.png"
     },
     {
-        "name": "Château d’Yquem Sauternes 2019",
+        "name": "Château d'Yquem Sauternes 2019",
         "grape": "Semillon, Sauvignon Blanc",
         "timeBarrel": 30,
         "country": "França",
         "region": "Bordeaux",
-        "image": "/images/wines/Château d’Yquem Sauternes 2019.png"
+        "image": "/images/wines/Château d'Yquem Sauternes 2019.png"
     },
     {
         "name": "Chateau Minuty 281 2022",
@@ -165,7 +165,7 @@
         "timeBarrel": 36,
         "country": "Itália",
         "region": "Valpolicella",
-        "image": "/images/wines/Montresor Satinato Amarone della Valpolicella .png"
+        "image": "/images/wines/Montresor Satinato Amarone della Valpolicella.png"
     },
     {
         "name": "Niepoort Redoma Reserva Branco Douro 2020",
@@ -224,19 +224,11 @@
         "image": "/images/wines/Trapiche Astica Torrontés.png"
     },
     {
-        "name": "Vinho Bouchard Pouilly-Fuissé 2021",
-        "grape": "Chardonnay",
-        "timeBarrel": 9,
-        "country": "França",
-        "region": "Borgonha",
-        "image": "/images/wines/Vinho Bouchard Pouilly-Fuissé 2021.png"
-    },
-    {
-        "name": "Vinho Don Pascual Coastal Tannat",
+        "name": "Don Pascual Coastal Tannat",
         "grape": "Tannat",
         "timeBarrel": null,
         "country": "Uruguai",
         "region": "Canelones",
-        "image": "/images/wines/Vinho Don Pascual Coastal Tannat.png"
+        "image": "/images/wines/Don Pascual Coastal Tannat.png"
     }
 ]
