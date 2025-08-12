@@ -1,4 +1,3 @@
-import React from 'react'
 import InitSection from './InitSection';
 
 const Main = () => {
@@ -9,4 +8,4 @@ const Main = () => {
     )
 }
 
-export default Main
+export default Main;
