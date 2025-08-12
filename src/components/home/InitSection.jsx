@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const InitSection = () => {
     const [initImageSrc, setInitImageSrc] = React.useState(undefined);
@@ -7,7 +7,7 @@ const InitSection = () => {
     const requestRadomWine = async () => {
 
         try {
-            const URL = '../../../public/data/wine.json'
+            const URL = '/data/wine.json'
 
             const responseWine = await fetch(URL);
 
@@ -26,14 +26,14 @@ const InitSection = () => {
         } catch (error) {
             console.error(`Houve um erro: ${error}!`);
             setInitImageAlt('Collection Sangiovese');
-            setInitImageAlt('../../../public/images/default-wine.png');
+            setInitImageAlt('/images/default-wine.png');
         } 
          
     }
     
     React.useEffect(() => {
         requestRadomWine();
-    }, [])
+    }, []);
 
     return (
         <section 

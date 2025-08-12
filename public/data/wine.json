@@ -222,13 +222,5 @@
         "country": "Argentina",
         "region": "Mendoza",
         "image": "/images/wines/Trapiche Astica Torrontés.png"
-    },
-    {
-        "name": "Don Pascual Coastal Tannat",
-        "grape": "Tannat",
-        "timeBarrel": null,
-        "country": "Uruguai",
-        "region": "Canelones",
-        "image": "/images/wines/Don Pascual Coastal Tannat.png"
     }
 ]
