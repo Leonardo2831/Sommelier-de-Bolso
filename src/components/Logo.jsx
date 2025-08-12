@@ -9,6 +9,7 @@ const Logo = () => {
     const altLogo = 'Sommelier de Bolso';
 
     const [open, setOpen] = React.useState(false);
+
     const menuRef = React.useRef(null);
 
     React.useEffect(() => {

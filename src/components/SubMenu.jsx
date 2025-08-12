@@ -3,7 +3,7 @@ import React from 'react';
 // deve desestruturar, pois os valores são passados dentro de um objeto
 const SubMenu = React.forwardRef(function SubMenu({ options, transform }, ref) {
     const styleMenu = 
-        `shadow absolute top-full ${transform}
+        `shadow absolute z-20 top-full ${transform}
         flex-col items-center gap-3 w-[200px]
         p-3 rounded-b-lg
         bg-beige dark:bg-gray`;
