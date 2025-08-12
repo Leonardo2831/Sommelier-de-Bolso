@@ -1,5 +1,5 @@
-import LinksNav from './header/LinksNav.jsx';
-import Logo from './Logo.jsx';
+import LinksNav from './LinksNav.jsx';
+import Logo from '../Logo.jsx';
 
 const Header = () => {
     return ( 
@@ -11,7 +11,7 @@ const Header = () => {
                 <LinksNav/>
             </nav>
             
-            <Logo/>
+            <Logo visibleMenu={true}/>
         </header>
     )
 }
