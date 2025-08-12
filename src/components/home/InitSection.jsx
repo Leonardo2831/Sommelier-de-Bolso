@@ -1,40 +1,12 @@
-import React from 'react';
+import wines from '../../../public/data/wines.js';
 
 const InitSection = () => {
-    const [initImageSrc, setInitImageSrc] = React.useState(undefined);
-    const [initImageAlt, setInitImageAlt] = React.useState(undefined);
+    const choiceWine = Math.floor(Math.random() * wines.length);
+    const {name, image} = wines[choiceWine];
 
-    const requestRadomWine = async () => {
-
-        try {
-            const URL = '/data/wine.json'
-
-            const responseWine = await fetch(URL);
-
-            if(!responseWine.ok){
-                console.error(`Houve um erro: ${responseWine.status}!`);
-                return;
-            }
-
-            const wines = await responseWine.json();
-
-            const choiceWineNumber = Math.floor(Math.random() * wines.length);            
-            const {name, image} = wines[choiceWineNumber];
-
-            setInitImageAlt(name);
-            setInitImageSrc(image);
-        } catch (error) {
-            console.error(`Houve um erro: ${error}!`);
-            setInitImageAlt('Collection Sangiovese');
-            setInitImageAlt('/images/default-wine.png');
-        } 
-         
-    }
+    const initImageSrc = image;
+    const initImageAlt = name;
     
-    React.useEffect(() => {
-        requestRadomWine();
-    }, []);
-
     return (
         <section 
             className='flex items-center justify-center gap-[30px] p-[30px] 
