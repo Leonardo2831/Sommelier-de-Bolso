@@ -1,170 +1,72 @@
 [
     {
-        "Nome": "Chianti Classico Riserva",
-        "Image": "https://site-oficial.it/chianti-riserva.png",
-        "TempoBarrica": "24 meses",
-        "País": "Itália",
-        "Uva": "Sangiovese"
+        "name": "Chianti Classico Riserva",
+        "image": "https://www.grandcru.com.br/media/catalog/product/cache/1/image/800x800/9df78eab33525d08d6e5fb8d27136e95/l/e/le_ripe_chianti_classico_riserva.jpg",
+        "timeBarrel": "12 meses",
+        "country": "Itália",
+        "grape": "Sangiovese"
     },
     {
-        "Nome": "Barolo DOCG",
-        "Image": "https://site-oficial.it/barolo-docg.png",
-        "TempoBarrica": "36 meses",
-        "País": "Itália",
-        "Uva": "Nebbiolo"
+        "name": "Casa Geraldo Syrah Reserva",
+        "image": "https://www.vinhacoseacessorios.com.br/wp-content/uploads/2022/06/Syrah-Reserva-Casa-Geraldo.jpg",
+        "timeBarrel": "12 meses",
+        "country": "Brasil",
+        "grape": "Syrah"
     },
     {
-        "Nome": "Amarone della Valpolicella",
-        "Image": "https://site-oficial.it/amarone-valpolicella.png",
-        "TempoBarrica": "30 meses",
-        "País": "Itália",
-        "Uva": "Corvina"
+        "name": "Carolina Gran Reserva Carmenère",
+        "image": "https://www.casaflora.com.br/arquivos/610119_1.jpg",
+        "timeBarrel": "8 meses",
+        "country": "Chile",
+        "grape": "Carmenère"
     },
     {
-        "Nome": "Brunello di Montalcino",
-        "Image": "https://site-oficial.it/brunello-montalcino.png",
-        "TempoBarrica": "36 meses",
-        "País": "Itália",
-        "Uva": "Sangiovese"
+        "name": "Napa Valley Red Wine",
+        "image": "https://www.cleanpng.com/png-napa-valley-red-wine-bottle-1187792/",
+        "timeBarrel": "24 meses",
+        "country": "Estados Unidos",
+        "grape": "Cabernet Sauvignon"
     },
     {
-        "Nome": "Prosecco Superiore DOCG",
-        "Image": "https://site-oficial.it/prosecco-docg.png",
-        "TempoBarrica": null,
-        "País": "Itália",
-        "Uva": "Glera"
+        "name": "Bordeaux Grand Cru",
+        "image": "https://www.shutterstock.com/search/bordeaux-grand-cru-wine?page=2",
+        "timeBarrel": "24 meses",
+        "country": "França",
+        "grape": "Merlot"
     },
     {
-        "Nome": "Cabernet Sauvignon Concha y Toro",
-        "Image": "https://site-oficial.cl/cabernet-concha-toro.png",
-        "TempoBarrica": "12 meses",
-        "País": "Chile",
-        "Uva": "Cabernet Sauvignon"
+        "name": "Marqués de Cáceres Crianza",
+        "image": "https://www.marquesdecaceres.com/wp-content/uploads/2021/02/crianza-2021.jpg",
+        "timeBarrel": "12 meses",
+        "country": "Espanha",
+        "grape": "Tempranillo"
     },
     {
-        "Nome": "Carmenere Gran Reserva",
-        "Image": "https://site-oficial.cl/carmenere-gran-reserva.png",
-        "TempoBarrica": "14 meses",
-        "País": "Chile",
-        "Uva": "Carmenere"
+        "name": "Malbec Premium",
+        "image": "https://pngtree.com/freepng/malbec-wine-bottle_15754792.html",
+        "timeBarrel": "12 meses",
+        "country": "Argentina",
+        "grape": "Malbec"
     },
     {
-        "Nome": "Casillero del Diablo Merlot",
-        "Image": "https://site-oficial.cl/casillero-merlot.png",
-        "TempoBarrica": "9 meses",
-        "País": "Chile",
-        "Uva": "Merlot"
+        "name": "Cabernet Franc Loire",
+        "image": "https://www.ninetypluscellars.com/wp-content/uploads/2021/04/90-Cellars-Lot-209-Bourgueil-Cabernet-Franc.jpg",
+        "timeBarrel": "18 meses",
+        "country": "França",
+        "grape": "Cabernet Franc"
     },
     {
-        "Nome": "Montes Alpha Syrah",
-        "Image": "https://site-oficial.cl/montes-alpha-syrah.png",
-        "TempoBarrica": "12 meses",
-        "País": "Chile",
-        "Uva": "Syrah"
+        "name": "Sauvignon Blanc Marlborough",
+        "image": "https://www.pngwing.com/pt/free-png-tusyz",
+        "timeBarrel": null,
+        "country": "Nova Zelândia",
+        "grape": "Sauvignon Blanc"
     },
     {
-        "Nome": "Undurraga Chardonnay",
-        "Image": "https://site-oficial.cl/undurraga-chardonnay.png",
-        "TempoBarrica": null,
-        "País": "Chile",
-        "Uva": "Chardonnay"
-    },
-    {
-        "Nome": "Opus One",
-        "Image": "https://site-oficial.us/opus-one.png",
-        "TempoBarrica": "18 meses",
-        "País": "Estados Unidos",
-        "Uva": "Cabernet Sauvignon"
-    },
-    {
-        "Nome": "Robert Mondavi Chardonnay",
-        "Image": "https://site-oficial.us/robert-mondavi-chardonnay.png",
-        "TempoBarrica": "10 meses",
-        "País": "Estados Unidos",
-        "Uva": "Chardonnay"
-    },
-    {
-        "Nome": "Silver Oak Cabernet Sauvignon",
-        "Image": "https://site-oficial.us/silver-oak-cabernet.png",
-        "TempoBarrica": "24 meses",
-        "País": "Estados Unidos",
-        "Uva": "Cabernet Sauvignon"
-    },
-    {
-        "Nome": "Duckhorn Merlot",
-        "Image": "https://site-oficial.us/duckhorn-merlot.png",
-        "TempoBarrica": "15 meses",
-        "País": "Estados Unidos",
-        "Uva": "Merlot"
-    },
-    {
-        "Nome": "Kendall-Jackson Vintner's Reserve Pinot Noir",
-        "Image": "https://site-oficial.us/kendall-jackson-pinot-noir.png",
-        "TempoBarrica": "9 meses",
-        "País": "Estados Unidos",
-        "Uva": "Pinot Noir"
-    },
-    {
-        "Nome": "Château Margaux",
-        "Image": "https://site-oficial.fr/chateau-margaux.png",
-        "TempoBarrica": "24 meses",
-        "País": "França",
-        "Uva": "Cabernet Sauvignon"
-    },
-    {
-        "Nome": "Château Lafite Rothschild",
-        "Image": "https://site-oficial.fr/chateau-lafite.png",
-        "TempoBarrica": "20 meses",
-        "País": "França",
-        "Uva": "Cabernet Sauvignon"
-    },
-    {
-        "Nome": "Château Mouton Rothschild",
-        "Image": "https://site-oficial.fr/chateau-mouton.png",
-        "TempoBarrica": "22 meses",
-        "País": "França",
-        "Uva": "Cabernet Sauvignon"
-    },
-    {
-        "Nome": "Domaine de la Romanée-Conti",
-        "Image": "https://site-oficial.fr/romanee-conti.png",
-        "TempoBarrica": "16 meses",
-        "País": "França",
-        "Uva": "Pinot Noir"
-    },
-    {
-        "Nome": "Chablis Grand Cru",
-        "Image": "https://site-oficial.fr/chablis-grand-cru.png",
-        "TempoBarrica": null,
-        "País": "França",
-        "Uva": "Chardonnay"
-    },
-    {
-        "Nome": "Miolo Reserva Pinot Noir",
-        "Image": "https://www.miolo.com.br/media/wines/miolo_reserva_pinot_noir.png",
-        "TempoBarrica": "12 meses",
-        "País": "Brasil",
-        "Uva": "Pinot Noir"
-    },
-    {
-        "Nome": "Casa Valduga Gran Reserva Merlot",
-        "Image": "https://www.casavalduga.com.br/media/wines/gran_reserva_merlot.png",
-        "TempoBarrica": "14 meses",
-        "País": "Brasil",
-        "Uva": "Merlot"
-    },
-    {
-        "Nome": "Salton Volpi Cabernet Sauvignon",
-        "Image": "https://www.salton.com.br/media/wines/volpi_cabernet_sauvignon.png",
-        "TempoBarrica": "10 meses",
-        "País": "Brasil",
-        "Uva": "Cabernet Sauvignon"
-    },
-    {
-        "Nome": "Vale dos Vinhedos Chardonnay",
-        "Image": "https://www.valedosvinhedos.com.br/media/wines/chardonnay.png",
-        "TempoBarrica": null,
-        "País": "Brasil",
-        "Uva": "Chardonnay"
+        "name": "Pinot Noir Oregon",
+        "image": "https://www.pngegg.com/pt/png-oxekq",
+        "timeBarrel": "12 meses",
+        "country": "Estados Unidos",
+        "grape": "Pinot Noir"
     }
 ]
