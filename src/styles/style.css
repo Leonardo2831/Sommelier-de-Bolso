@@ -46,7 +46,7 @@
 
 @layer {
     body{
-        @apply bg-white dark:bg-black font-serif;
+        @apply bg-white dark:bg-black font-serif overflow-x-hidden;
     }
 
     #root{
