@@ -26,7 +26,7 @@ const InitSection = () => {
         } catch (error) {
             console.error(`Houve um erro: ${error}!`);
             setInitImageAlt('Collection Sangiovese');
-            setInitImageAlt('../../../public/images/collection-sangiovese.png');
+            setInitImageAlt('../../../public/images/default-wine.png');
         } 
          
     }
