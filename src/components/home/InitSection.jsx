@@ -57,7 +57,7 @@ const InitSection = () => {
             >
                 <img 
                     className='-rotate-[18deg] max-w-[420px] w-full max-sm:max-w-[300px] max-sm:-translate-x-[40px]' 
-                    src="../../../public/images/details-background.png" 
+                    src="/images/details-background.png" 
                     alt="Detalhe de fundo" 
                 />
                 <img className='absolute top-1/2 left-1/2 -translate-1/2 w-[250px] h-[400px] object-contain max-sm:w-[250px] z-10' src={initImageSrc} alt={initImageAlt}/>
