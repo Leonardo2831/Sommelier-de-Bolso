@@ -139,7 +139,8 @@
     }
 
     .content-responseIA a{
-        @apply text-blue-dark dark:text-blue-light font-sans font-medium text-lg;
+        @apply text-blue-dark dark:text-blue-light font-sans font-medium 
+        text-lg underline underline-offset-4 cursor-pointer;
     }
 
     .content-responseIA ul{
