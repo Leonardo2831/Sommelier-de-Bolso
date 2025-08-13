@@ -150,4 +150,23 @@
         list-style-type: upper-roman;
         @apply list-inside ml-6;
     }
+
+    .button-ia > p{
+        @apply inline-block;
+    }
+
+    .button-ia > span{
+        @apply animate-bounce inline-block w-1 h-1 rounded-full bg-white;
+        margin-left: 0.4rem;
+    }
+    
+    .button-ia > span:nth-of-type(2){
+        @apply animate-bounce;
+        animation-delay: 0.3s;
+    }
+    
+    .button-ia > span:nth-of-type(3){
+        @apply animate-bounce;
+        animation-delay: 0.6s;
+    }
 }
