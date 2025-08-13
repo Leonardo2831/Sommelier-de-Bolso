@@ -27,9 +27,9 @@ const Logo = ({ visibleMenu }) => {
                     setOpen(!open);
                 }
             }
-            className="relative w-[100px] p-[10px] cursor-pointer"
+            className="relative w-[120px] p-[10px] cursor-pointer"
         >
-            <img className="max-w-[100px]" src={urlLogo} alt={altLogo} />
+            <img className="min-w-[100px]" src={urlLogo} alt={altLogo} />
             <SubMenu
                 ref={menuRef}
                 transform="left-valueLogo"
