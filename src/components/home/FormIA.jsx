@@ -1,14 +1,61 @@
 import React from 'react';
+import showdown from 'showdown';
+
 import Input from './../Input';
 
 const FormIA = () => {
     const refButton = React.useRef(null);
+    const refInputQuestion = React.useRef(null);
+    const refInputWine = React.useRef(null);
+    const refInputGrape = React.useRef(null);
 
-    function requestIa(){
+    const converter = new showdown.Converter();
+
+    async function requestGemini(){
+        const inputQuestion = refInputQuestion.current;
+        const inputWine = refInputWine.current;
+        const inputGrape = refInputGrape.current;
+
+        const url = '/api/requestGemini.js';
+        const objFetch = {
+            method: 'POST',
+            headers: {
+                    "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                input: inputQuestion.value,
+                contentWine: inputWine.value,
+                contextGrape: inputGrape.value,
+            }),
+        }
+
+        const responseGemini = fetch(url , objFetch);
+        const dataGemini = await responseGemini.json();
+        const messageGemini = dataGemini.message;
+
+        const htmlMessageGemini = converter.makeHtml(messageGemini);
+
+        refButton.current.nextElementSibling.innerHTML = htmlMessageGemini;
+    }
+
+    function initRequestIa(){
+        const button = refButton.current;
         const classLoading = 'loadingButton';
 
-        refButton.current.classList.add(classLoading);
-        refButton.current.innerHTML = '<p>Consultando</p><span></span><span></span><span></span>';
+        button.classList.add(classLoading);
+        button.innerHTML = '<p>Consultando</p><span></span><span></span><span></span>';
+
+        try {
+            requestGemini();
+        } catch (error) {
+            button.nextElementSibling.innerHTML = 
+                '<p class="font-sans text-xl">Houve um <b className="font-medium">erro</b>, tente novamente mais tarde!</p>';
+
+            console.error(error);
+        } finally {
+            button.classList.remove(classLoading);
+            button.textContent = 'Consultar';
+        }
     }
 
     return (
@@ -18,14 +65,14 @@ const FormIA = () => {
             id='#IA' 
             onSubmit={(event) => {
                 event.preventDefault();
-                requestIa();
+                initRequestIa();
             }}
         >
             <h3 className='text-center text-[40px] text-maple dark:text-gold font-semibold mb-[50px]'>Sommelier IA</h3>
             <section className='grid grid-cols-1 gap-x-[30px] gap-y-[50px] [@media(min-width:480px)]:*:first:col-span-2 [@media(min-width:480px)]:grid-cols-2'>
-                <Input text="Digite sua dúvida" type="text" id="question" required />
-                <Input text="Vinho (opcional)" type="text" id="wine" data-optional={true}/>
-                <Input text="Uva (opcional)" type="text" id="grape" data-optional={true}/>
+                <Input ref={refInputQuestion} text="Digite sua dúvida" type="text" id="question" required />
+                <Input ref={refInputWine} text="Vinho (opcional)" type="text" id="wine" data-optional={true}/>
+                <Input ref={refInputGrape} text="Uvas (opcional)" type="text" id="grape" data-optional={true}/>
                 <button 
                     ref={refButton}
                     type='submit'
@@ -36,7 +83,7 @@ const FormIA = () => {
                 >
                     <p>Consultar</p>
                 </button>
-                <div className='content-responseIA [@media(min-width:480px)]:col-span-2'></div>
+                <div className='content-responseIA text-gray dark:text-cream [@media(min-width:480px)]:col-span-2'></div>
             </section>
         </form>
     )
