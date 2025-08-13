@@ -4,7 +4,7 @@ import initClickOutside from "../javascript/clickOutside.js";
 import ButtonToggleMode from "./header/ButtonToggleMode";
 import SubMenu from "./SubMenu";
 
-const Logo = () => {
+const Logo = ({ visibleMenu }) => {
     const urlLogo = '/icons/logo.png';
     const altLogo = 'Sommelier de Bolso';
 
@@ -19,6 +19,9 @@ const Logo = () => {
     return (
         <figure
             onClick={
+                !visibleMenu ? () => {
+                    return;
+                } : 
                 (event) => {
                     event.stopPropagation(); 
                     setOpen(!open);
