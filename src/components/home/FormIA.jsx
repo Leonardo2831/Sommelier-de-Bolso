@@ -8,7 +8,7 @@ const FormIA = () => {
         const classLoading = 'loadingButton';
 
         refButton.current.classList.add(classLoading);
-        refButton.current.textContent = 'Consultando...';
+        refButton.current.innerHTML = '<p>Consultando</p><span></span><span></span><span></span>';
     }
 
     return (
@@ -29,10 +29,12 @@ const FormIA = () => {
                 <button 
                     ref={refButton}
                     type='submit'
-                    className='py-2 px-6 font-semibold text-2xl bg-gold dark:bg-maple 
-                    text-white rounded-md cursor-pointer [@media(min-width:480px)]:col-span-2 [@media(min-width:480px)]:text-3xl'
+                    className='button-ia py-2 px-6 font-semibold text-2xl 
+                    bg-gold dark:bg-maple text-white 
+                    rounded-md cursor-pointer 
+                    [@media(min-width:480px)]:col-span-2 [@media(min-width:480px)]:text-3xl'
                 >
-                    Consultar
+                    <p>Consultar</p>
                 </button>
                 <div className='content-responseIA [@media(min-width:480px)]:col-span-2'></div>
             </section>
