@@ -23,8 +23,8 @@ const Input = ({ text, type, id, ...props }) => {
         <div className='relative'>
             <input 
                 onChange={(event) => setValue(event.target.value)}
-                className='input-item w-full font-sans font-medium 
-                text-gray min-h-12 py-2 px-4 rounded-md 
+                className='input-item w-full font-sans font-medium text-base
+                text-gray min-h-11 py-2 px-4 rounded-md 
                 bg-cream dark:bg-beige 
                 focus:outline-none focus:border-2 focus:border-gold' 
                 type={type} name={id} 
@@ -33,8 +33,9 @@ const Input = ({ text, type, id, ...props }) => {
             />
             <label 
                 ref={refLabel}
-                className='input-focusText absolute z-20 left-4 top-2 font-semibold text-2xl text-light-gray' 
-                htmlFor={id}>
+                className='input-focusText absolute z-20 left-4 top-2 font-semibold text-xl text-light-gray' 
+                htmlFor={id}
+                {...(props ? {'data-optional': true} : {})}>
                     {text}
             </label>
         </div>
