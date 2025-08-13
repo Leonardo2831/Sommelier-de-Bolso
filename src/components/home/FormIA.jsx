@@ -34,20 +34,7 @@ const FormIA = () => {
                 >
                     Consultar
                 </button>
-                <div className='content-responseIA [@media(min-width:480px)]:col-span-2'>
-                    <h1>Teste 1</h1>
-                    <h2>teste 2</h2>
-                    <h3>teste 3</h3>
-                    <h4>teste 4</h4>
-                    <h5>teste 5</h5>
-                    <h6>teste 6</h6>
-                    <ul>
-                        <li>test</li>
-                        <li>test</li>
-                        <li>test</li>
-                        <li>test</li>
-                    </ul>
-                </div>
+                <div className='content-responseIA [@media(min-width:480px)]:col-span-2'></div>
             </section>
         </form>
     )
