@@ -18,7 +18,7 @@ const SubMenu = React.forwardRef(function SubMenu({ options, transform }, ref) {
                         className='w-full p-2 flex items-center justify-center 
                         capitalize text-2xl font-medium
                         text-maple hover:text-red dark:text-gold dark:hover:text-beige
-                        transition-colors duration-200'
+                        transition-colors duration-150'
                     >
                         {
                             element ? element : link 

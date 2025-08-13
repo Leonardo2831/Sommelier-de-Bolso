@@ -7,7 +7,7 @@ const ContactInfo = ({ items }) => {
                 items.map((itemContact, index) => {
                     
                     const {src, alt, link, element} = itemContact;
-                    const classItem = "font-semibold text-xl text-maple hover:text-red dark:text-gold dark:hover:text-beige transition-colors duration-200";
+                    const classItem = "font-semibold text-xl text-maple hover:text-red dark:text-gold dark:hover:text-beige transition-colors duration-150";
 
                     if(element){
                         return (

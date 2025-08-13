@@ -19,7 +19,8 @@ const Footer = ({ listFooter }) => {
                         return (
                             <li key={index} 
                                 className='text-2xl font-medium 
-                                text-maple dark:text-gold hover:text-red dark:hover:text-beige'
+                                text-maple dark:text-gold hover:text-red dark:hover:text-beige
+                                transition-colors duration-150'
                             >
                                 <a href={link}>{text}</a>
                             </li>
