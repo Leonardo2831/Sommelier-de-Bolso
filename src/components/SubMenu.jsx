@@ -5,8 +5,7 @@ const SubMenu = React.forwardRef(function SubMenu({ options, transform }, ref) {
     const styleMenu = 
         `shadow absolute z-20 top-full ${transform}
         flex-col items-center gap-3 w-[200px]
-        p-3 rounded-b-lg
-        bg-beige dark:bg-gray`;
+        p-3 rounded-b-lg bg-beige dark:bg-gray`;
 
     return (
         <ul data-sub-menu ref={ref} 
@@ -16,7 +15,11 @@ const SubMenu = React.forwardRef(function SubMenu({ options, transform }, ref) {
 
                 return (
                     <li key={index} 
-                    className='w-full p-2 flex items-center justify-center capitalize text-2xl font-medium'>
+                        className='w-full p-2 flex items-center justify-center 
+                        capitalize text-2xl font-medium
+                        text-maple hover:text-red dark:text-gold dark:hover:text-beige
+                        transition-colors duration-200'
+                    >
                         {
                             element ? element : link 
                             && text ? <a className="w-full text-center font-medium" href={link}>{text}</a> 
