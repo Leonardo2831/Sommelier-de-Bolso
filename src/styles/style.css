@@ -16,6 +16,9 @@
     --color-maple: #5A2323;
 
     --color-shadow: rgba(0, 0, 0, 0.2);
+
+    --color-blue-dark: #143F74;
+    --color-blue-light: #83B5EA;
     
     --font-serif: "Cormorant Garamond", serif;
     --font-sans: "Open Sans", sans-serif;
@@ -113,27 +116,30 @@
         @apply text-maple dark:text-gold
     }
 
-    .content-responseIA h1{
-        @apply text-3xl font-bold;
-    }
+    .content-responseIA h1,
     .content-responseIA h2{
         @apply text-3xl font-bold;
     }
-    .content-responseIA h3{
+
+    .content-responseIA h3,
+    .content-responseIA h4{
         @apply text-2xl font-bold;
     }
-    .content-responseIA h4{
-        @apply text-2xl font-semibold;
-    }
+
     .content-responseIA h5{
         @apply text-xl font-semibold;
     }
     .content-responseIA h6{
-        @apply text-xl font-medium;
+        @apply text-xl font-semibold;
     }   
 
-    .content-responseIA p, span{
+    .content-responseIA p
+    .content-responseIA span{
         @apply font-sans text-lg text-gray dark:text-cream;
+    }
+
+    .content-responseIA a{
+        @apply text-blue-dark dark:text-blue-light font-sans font-medium text-lg;
     }
 
     .content-responseIA ul{
