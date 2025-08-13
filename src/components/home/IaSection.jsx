@@ -2,7 +2,7 @@ import FormIA from './FormIA';
 
 const IaSection = () => {
     return (
-        <section className='flex flex-col items-center'>
+        <section className='flex flex-col items-center p-5'>
             <h1 className='text-center font-medium text-5xl text-maple dark:text-gold mb-5'>
                 Não encontrou<span className='text-gold dark:text-red'>?</span>
             </h1>
