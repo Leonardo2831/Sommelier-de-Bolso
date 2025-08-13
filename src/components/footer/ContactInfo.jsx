@@ -1,7 +1,8 @@
 const ContactInfo = ({ items }) => {
 
     return (
-        <address className='not-italic grid grid-cols-2 items-center justify-center gap-7 *:flex *:items-center *:gap-3'>
+        <address className='not-italic grid items-center justify-center gap-10 *:flex *:items-center *:gap-3 
+        sm:grid-cols-2 sm:gap-7 md:col-span-2 lg:col-span-1'>
             {
                 items.map((itemContact, index) => {
                     
@@ -22,7 +23,7 @@ const ContactInfo = ({ items }) => {
                             <a key={index} href={link} 
                                 className={classItem}
                             >
-                                <img className='w-5 h-5' src={src} alt={alt}/>
+                                <img className='w-7 h-7' src={src} alt={alt}/>
                                 <p>{alt}</p>
                             </a>
                         )   
