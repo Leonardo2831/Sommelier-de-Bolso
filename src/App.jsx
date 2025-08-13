@@ -10,7 +10,14 @@ export default function App(){
         <AppProvider>
             <Header/>
             <Main/>
-            <Footer/>
+            <Footer listFooter={[
+                    {text: 'Terroir', link: '#Terroir'},
+                    {text: 'Uvas', link: '#Uvas'},
+                    {text: 'Barricas', link: '#Barricas'},
+                    {text: 'Aromas', link: '#Aromas'},
+                    {text: 'IA', link: '#IA'}
+                ]}
+            />
             <Analytics/>
         </AppProvider>
     );
