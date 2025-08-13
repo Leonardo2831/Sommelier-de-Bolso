@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Input = ({ text, type, id, ...props }) => {
+const Input = ({ text, type, id, ...props }, ref) => {
     const [value, setValue] = React.useState('');
 
     const refLabel = React.useRef(null);
@@ -22,6 +22,7 @@ const Input = ({ text, type, id, ...props }) => {
     return (
         <div className='relative'>
             <input 
+                ref={ref}
                 onChange={(event) => setValue(event.target.value)}
                 className='input-item w-full font-sans font-medium text-base
                 text-gray min-h-11 py-2 px-4 rounded-md 
