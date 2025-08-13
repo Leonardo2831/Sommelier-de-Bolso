@@ -15,7 +15,6 @@ export default function App(){
                     {text: 'Uvas', link: '#Uvas'},
                     {text: 'Barricas', link: '#Barricas'},
                     {text: 'Aromas', link: '#Aromas'},
-                    {text: 'IA', link: '#IA'}
                 ]}
             />
             <Analytics/>
