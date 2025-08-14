@@ -3,7 +3,7 @@ import Logo from '../Logo.jsx';
 
 const Header = () => {
     return ( 
-        <header className='flex justify-between items-center gap-3 px-10 py-[30px] max-sm:px-[30px]'>
+        <header className='flex justify-between items-center gap-3 px-10 py-5'>
             <nav>
                 <LinksNav/>
             </nav>

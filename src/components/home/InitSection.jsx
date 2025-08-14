@@ -9,23 +9,23 @@ const InitSection = () => {
     
     return (
         <section 
-            className='flex items-center justify-center gap-[30px] p-[30px] 
-            max-sm:flex-col max-sm:flex-wrap max-sm:py-5 max-sm:px-5'
+            className='flex items-center justify-center gap-[10px] p-[60px] 
+            max-sm:flex-col max-sm:flex-wrap max-sm:p-10'
         >
             <article className='flex-1 flex items-center justify-center basis-[200px]'>
-                <h1 className='text-5xl text-maple dark:text-gold max-sm:text-4xl'>
+                <h1 className='text-4xl text-maple dark:text-gold sm:text-[40px]'>
                     Seja um 
                     <br/>
-                    <span className='font-semibold text-red dark:text-beige'>Sommelier </span> 
+                    <span className='text-[40px] font-semibold text-red dark:text-beige sm:text-[44px]'>Sommelier </span> 
                     apenas
                     <br/>
                     com seu 
-                    <span className='font-semibold text-red dark:text-beige'> bolso</span>
+                    <span className='text-[40px] font-semibold text-red dark:text-beige sm:text-[44px]'> bolso</span>
                     <span className='font-semibold text-gold dark:text-red'>.</span>
                 </h1>
             </article>
             <figure 
-                className='relative h-fit flex-1 flex items-center justify-center sm:basis-[300px] sm:justify-start'
+                className='relative overflow-hidden h-fit flex-1 flex items-center justify-center sm:basis-[300px] sm:justify-start'
             >
                 <img 
                     className='-rotate-[18deg] max-w-[420px] w-full max-h-[500px] max-sm:max-w-[300px] max-sm:-translate-x-[40px]' 

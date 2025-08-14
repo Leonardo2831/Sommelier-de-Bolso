@@ -2,6 +2,7 @@ import React from 'react';
 import initClickOutside from '../../javascript/clickOutside.js';
 
 import SubMenu from '../SubMenu.jsx';
+import { Link } from 'react-router-dom';
 
 const LinksNav = () => {
     const [open, setOpen] = React.useState(false);
@@ -19,7 +20,7 @@ const LinksNav = () => {
             *:text-maple *:hover:text-red dark:*:text-gold dark:*:hover:text-beige
             *:transition-colors *:duration-150 max-sm:*:text-2xl'>
             <li>
-                <a href="/index.html">Home</a>
+                <Link to='/'>Home</Link>
             </li>
             <li onClick={() => {setOpen(!open)}} data-button-menu className='relative'>
                 <p>Vinhos</p>
@@ -28,15 +29,15 @@ const LinksNav = () => {
                     transform="left-valueLinks"
                     options={
                         [
-                            { text: 'Barricas', link: '#link1'}, 
-                            { text: 'Aromas', link: '#link2'},
-                            { text: 'uvas', link: '#uvas'},
+                            { text: 'Barricas', link: 'Barricas'}, 
+                            { text: 'Aromas', link: 'Aromas'},
+                            { text: 'uvas', link: 'Uvas'},
                         ]
                     } 
                 />
             </li>
             <li>
-                <a href="#">Terroir</a>
+                <Link to='Terroir'>Terroir</Link>
             </li>
         </ul>
     )

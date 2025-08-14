@@ -1,16 +1,17 @@
 import Logo from '../Logo';
 import ContactInfo from './ContactInfo';
+import { Link } from 'react-router-dom';
 
 const Footer = ({ listFooter }) => {
     return (
         <footer 
-            className='px-10 py-[30px] 
+            className='px-10 py-5 
             grid items-center justify-items-center grid-cols-1 gap-10 sm:gap-5 
             md:grid-cols-2 lg:grid-cols-3'
         >
-            <a href="/index.html">
+            <Link to="/">
                 <Logo visibleMenu={false}/>
-            </a>
+            </Link>
             <ul className='list-disc *:mt-3 *:first:mt-0'>
                 {
                     listFooter.map((listItem, index) => {
@@ -22,7 +23,7 @@ const Footer = ({ listFooter }) => {
                                 text-maple dark:text-gold hover:text-red dark:hover:text-beige
                                 transition-colors duration-150'
                             >
-                                <a href={link}>{text}</a>
+                                <Link to={link}>{text}</Link>
                             </li>
                         )
                     })

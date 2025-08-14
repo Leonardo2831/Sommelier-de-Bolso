@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 // deve desestruturar, pois os valores são passados dentro de um objeto
 const SubMenu = React.forwardRef(function SubMenu({ options, transform }, ref) {
     const styleMenu = 
@@ -22,7 +23,7 @@ const SubMenu = React.forwardRef(function SubMenu({ options, transform }, ref) {
                     >
                         {
                             element ? element : link 
-                            && text ? <a className="w-full text-center font-medium" href={link}>{text}</a> 
+                            && text ? <Link className="w-full text-center font-medium" to={link}>{text}</Link> 
                             : text
                         }
                     </li>
