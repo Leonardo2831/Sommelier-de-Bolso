@@ -146,12 +146,14 @@
     .content-responseIA h3,
     .content-responseIA h4,
     .content-responseIA h3 > strong,
-    .content-responseIA h4 > strong{
+    .content-responseIA h4 > strong,
+    .content-responseIA caption{
         @apply text-2xl font-bold;
     }
 
     .content-responseIA h5,
     .content-responseIA h6,
+    .content-responseIA th,
     .content-responseIA h5 > strong,
     .content-responseIA h6 > strong{
         @apply text-xl font-semibold;
@@ -159,8 +161,15 @@
 
     .content-responseIA p,
     .content-responseIA span,
-    .content-responseIA li{
+    .content-responseIA li,
+    .content-responseIA tr,
+    .content-responseIA td{
         @apply font-normal text-lg text-gray dark:text-cream;
+    }
+
+    .content-responseIA tr > strong,
+    .content-responseIA td > strong{
+        @apply font-semibold text-lg text-gray dark:text-cream;
     }
 
     .content-responseIA b,
@@ -184,6 +193,24 @@
 
     .content-responseIA hr{
         @apply my-3;
+    }
+
+    .content-responseIA .table-responsive{
+        @apply pb-3 overflow-x-auto;
+    }
+
+    .content-responseIA table{
+        @apply border-collapse;
+    }
+
+    .content-responseIA tr,
+    .content-responseIA td,
+    .content-responseIA th{
+        @apply border border-gray p-3 !text-center;
+    }
+
+    .content-responseIA tr:nth-child(even){
+        @apply bg-cream;
     }
 
     /* scroll style */
