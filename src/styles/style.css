@@ -107,52 +107,7 @@
         @apply animate-loadingButton;
     }
 
-    .content-responseIA h1,
-    .content-responseIA h2,
-    .content-responseIA h3,
-    .content-responseIA h4,
-    .content-responseIA h5,
-    .content-responseIA h6{
-        @apply text-maple dark:text-gold
-    }
-
-    .content-responseIA h1,
-    .content-responseIA h2{
-        @apply text-3xl font-bold;
-    }
-
-    .content-responseIA h3,
-    .content-responseIA h4{
-        @apply text-2xl font-bold;
-    }
-
-    .content-responseIA h5{
-        @apply text-xl font-semibold;
-    }
-    .content-responseIA h6{
-        @apply text-xl font-semibold;
-    }   
-
-    .content-responseIA p
-    .content-responseIA span{
-        @apply font-sans text-lg text-gray dark:text-cream;
-    }
-
-    .content-responseIA a{
-        @apply text-blue-dark dark:text-blue-light font-sans font-medium 
-        text-lg underline underline-offset-4 cursor-pointer;
-    }
-
-    .content-responseIA ul{
-        @apply list-disc list-inside ml-6;
-    }
-
-    .content-responseIA ol{
-        list-style-type: upper-roman;
-        @apply list-inside ml-6;
-    }
-
-    .button-ia > p{
+        .button-ia > p{
         @apply inline-block;
     }
 
@@ -169,5 +124,78 @@
     .button-ia > span:nth-of-type(3){
         @apply animate-bounce;
         animation-delay: 0.6s;
+    }
+
+    /* style to ia generation */
+    .content-responseIA h1,
+    .content-responseIA h2,
+    .content-responseIA h3,
+    .content-responseIA h4,
+    .content-responseIA h5,
+    .content-responseIA h6{
+        @apply text-maple dark:text-gold my-5;
+    }
+
+    .content-responseIA h1,
+    .content-responseIA h2,
+    .content-responseIA h1 > strong,
+    .content-responseIA h2 > strong{
+        @apply text-3xl font-bold;
+    }
+
+    .content-responseIA h3,
+    .content-responseIA h4,
+    .content-responseIA h3 > strong,
+    .content-responseIA h4 > strong{
+        @apply text-2xl font-bold;
+    }
+
+    .content-responseIA h5,
+    .content-responseIA h6,
+    .content-responseIA h5 > strong,
+    .content-responseIA h6 > strong{
+        @apply text-xl font-semibold;
+    }
+
+    .content-responseIA p,
+    .content-responseIA span,
+    .content-responseIA li{
+        @apply font-normal text-lg text-gray dark:text-cream;
+    }
+
+    .content-responseIA b,
+    .content-responseIA strong{
+        @apply text-[20px] font-semibold;
+    }
+
+    .content-responseIA a{
+        @apply text-blue-dark dark:text-blue-light font-sans font-medium 
+        text-lg underline underline-offset-4 cursor-pointer;
+    }
+
+    .content-responseIA ul{
+        @apply list-disc list-inside ml-6;
+    }
+
+    .content-responseIA ol{
+        list-style-type: upper-roman;
+        @apply list-inside ml-6;
+    }
+
+    .content-responseIA hr{
+        @apply my-3;
+    }
+
+    /* scroll style */
+    .scroll::-webkit-scrollbar{
+        @apply w-2;
+    }
+
+    .scroll::-webkit-scrollbar-track{
+        @apply bg-transparent;
+    }
+
+    .scroll::-webkit-scrollbar-thumb{
+        @apply bg-white dark:bg-cream rounded-lg;
     }
 }
