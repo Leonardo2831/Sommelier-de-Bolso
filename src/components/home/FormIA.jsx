@@ -16,7 +16,7 @@ const FormIA = () => {
         const inputWine = refInputWine.current;
         const inputGrape = refInputGrape.current;
 
-        const url = '/api/requestGemini.js';
+        const url = `/api/requestGemini`;
         const objFetch = {
             method: 'POST',
             headers: {
@@ -24,12 +24,12 @@ const FormIA = () => {
             },
             body: JSON.stringify({
                 input: inputQuestion.value,
-                contentWine: inputWine.value,
+                contextWine: inputWine.value,
                 contextGrape: inputGrape.value,
             }),
         }
 
-        const responseGemini = fetch(url , objFetch);
+        const responseGemini = await fetch(url , objFetch);
         const dataGemini = await responseGemini.json();
         const messageGemini = dataGemini.message;
 
@@ -38,15 +38,17 @@ const FormIA = () => {
         refButton.current.nextElementSibling.innerHTML = htmlMessageGemini;
     }
 
-    function initRequestIa(){
+    async function initRequestIa(){
         const button = refButton.current;
         const classLoading = 'loadingButton';
 
         button.classList.add(classLoading);
         button.innerHTML = '<p>Consultando</p><span></span><span></span><span></span>';
 
+        button.nextElementSibling.innerHTML = '';
+
         try {
-            requestGemini();
+            await requestGemini();
         } catch (error) {
             button.nextElementSibling.innerHTML = 
                 '<p class="font-sans text-xl">Houve um <b className="font-medium">erro</b>, tente novamente mais tarde!</p>';
@@ -83,7 +85,11 @@ const FormIA = () => {
                 >
                     <p>Consultar</p>
                 </button>
-                <div className='content-responseIA text-gray dark:text-cream [@media(min-width:480px)]:col-span-2'></div>
+                <div 
+                    className='content-responseIA scroll px-2 pb-4 text-gray dark:text-cream 
+                    max-h-[500px] overflow-auto
+                    [@media(min-width:480px)]:col-span-2'
+                ></div>
             </section>
         </form>
     )
