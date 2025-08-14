@@ -9,51 +9,65 @@ const FormIA = () => {
     const refInputWine = React.useRef(null);
     const refInputGrape = React.useRef(null);
 
-    const converter = new showdown.Converter();
-
-    async function requestGemini(){
-        const inputQuestion = refInputQuestion.current;
-        const inputWine = refInputWine.current;
-        const inputGrape = refInputGrape.current;
-
-        const url = `/api/requestGemini`;
-        const objFetch = {
-            method: 'POST',
-            headers: {
-                    "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                input: inputQuestion.value,
-                contextWine: inputWine.value,
-                contextGrape: inputGrape.value,
-            }),
-        }
-
-        const responseGemini = await fetch(url , objFetch);
-        const dataGemini = await responseGemini.json();
-        const messageGemini = dataGemini.message;
-
-        const htmlMessageGemini = converter.makeHtml(messageGemini);
-
-        refButton.current.nextElementSibling.innerHTML = htmlMessageGemini;
-    }
+    const converter = new showdown.Converter({
+        tables: true,
+        simplifiedAutoLink: true,
+        strikethrough: true,
+        tasklists: true,
+        // código para criar uma div antes de gerar a tabela
+        extensions: [
+            function () {
+                return [{
+                    type: 'output',
+                    filter: function (text) {
+                        return text.replace(/<table>([\s\S]*?)<\/table>/g, '<div class="table-responsive scroll"><table>$1</table></div>');
+                    }
+                }];
+            }
+        ]
+    });
 
     async function initRequestIa(){
         const button = refButton.current;
         const classLoading = 'loadingButton';
+        const classHidden = 'hidden';
 
         button.classList.add(classLoading);
         button.innerHTML = '<p>Consultando</p><span></span><span></span><span></span>';
 
+        button.nextElementSibling.classList.add(classHidden);
         button.nextElementSibling.innerHTML = '';
 
         try {
-            await requestGemini();
-        } catch (error) {
+            const inputQuestion = refInputQuestion.current;
+            const inputWine = refInputWine.current;
+            const inputGrape = refInputGrape.current;
+
+            const url = `/api/requestGemini`;
+            const objFetch = {
+                method: 'POST',
+                headers: {
+                        "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    input: inputQuestion.value,
+                    contextWine: inputWine.value,
+                    contextGrape: inputGrape.value,
+                }),
+            }
+
+            const responseGemini = await fetch(url , objFetch);
+            const dataGemini = await responseGemini.json();
+            const messageGemini = dataGemini.message;
+
+            const htmlMessageGemini = converter.makeHtml(messageGemini);
+
+            button.nextElementSibling.classList.remove(classHidden);
+            button.nextElementSibling.innerHTML = htmlMessageGemini;
+        } catch {
+            button.nextElementSibling.classList.remove(classHidden);
             button.nextElementSibling.innerHTML = 
                 '<p class="font-sans text-xl">Houve um <b className="font-medium">erro</b>, tente novamente mais tarde!</p>';
-
-            console.error(error);
         } finally {
             button.classList.remove(classLoading);
             button.textContent = 'Consultar';
@@ -62,7 +76,7 @@ const FormIA = () => {
 
     return (
         <form 
-            className='max-w-[700px] w-full p-[30px] rounded-md bg-beige dark:bg-gray sm:p-[60px]'
+            className='max-w-[800px] w-full p-[30px] rounded-md bg-beige dark:bg-gray sm:p-[60px]'
             action="#"
             id='#IA' 
             onSubmit={(event) => {
@@ -86,8 +100,8 @@ const FormIA = () => {
                     <p>Consultar</p>
                 </button>
                 <div 
-                    className='content-responseIA scroll px-2 pb-4 text-gray dark:text-cream 
-                    max-h-[500px] overflow-auto
+                    className='content-responseIA hidden scroll px-4 pb-4 text-gray dark:text-cream 
+                    max-h-[500px] overflow-y-auto
                     [@media(min-width:480px)]:col-span-2'
                 ></div>
             </section>
