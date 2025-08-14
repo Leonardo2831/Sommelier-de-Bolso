@@ -5,7 +5,17 @@ const wines = [
         timeBarrel: null,
         country: "Espanha",
         region: "Valencia",
-        image: "/images/wines/Alicia en el Pais de Las Uvas.png"
+        image: "/images/wines/Alicia en el Pais de Las Uvas.png",
+        type: "rose",
+    },
+    {
+        name: "Ferrari Maximum Brut Trento DOC",
+        grape: "Chardonnay",
+        timeBarrel: 36,
+        country: "Itália",
+        region: "Trento D.O.C.",
+        image: "/images/wines/Ferrari Maximum Brut Trento DOC.png",
+        type: "sparkling",
     },
     {
         name: "Brunello di Montalcino Castiglion del Bosco Campo Del Drago",
@@ -13,15 +23,8 @@ const wines = [
         timeBarrel: 24,
         country: "Itália",
         region: "Toscana",
-        image: "/images/wines/Brunello di Montalcino Castiglion del Bosco Campo Del Drago.png"
-    },
-    {
-        name: "Carmín de Peumo",
-        grape: "Carménère",
-        timeBarrel: 15,
-        country: "Chile",
-        region: "Valle de Cachapoal",
-        image: "/images/wines/Carmín de Peumo.png"
+        image: "/images/wines/Brunello di Montalcino Castiglion del Bosco Campo Del Drago.png",
+        type: "red",
     },
     {
         name: "Casillero del Diablo Cabernet Suavignon",
@@ -29,7 +32,8 @@ const wines = [
         timeBarrel: 8,
         country: "Chile",
         region: "Valle Central",
-        image: "/images/wines/Casillero del Diablo Cabernet Suavignon.png"
+        image: "/images/wines/Casillero del Diablo Cabernet Suavignon.png",
+        type: "red",
     },
     {
         name: "Casillero del Diablo Sauvignon Blanc",
@@ -37,7 +41,8 @@ const wines = [
         timeBarrel: null,
         country: "Chile",
         region: "Valle Central",
-        image: "/images/wines/Casillero del Diablo Sauvignon Blanc.png"
+        image: "/images/wines/Casillero del Diablo Sauvignon Blanc.png",
+        type: "white",
     },
     {
         name: "Catena Malbec 2022",
@@ -45,7 +50,8 @@ const wines = [
         timeBarrel: 12,
         country: "Argentina",
         region: "Mendoza",
-        image: "/images/wines/Catena Malbec 2022.png"
+        image: "/images/wines/Catena Malbec 2022.png",
+        type: "red",
     },
     {
         name: "Cave Geisse Terroir Nature",
@@ -53,7 +59,8 @@ const wines = [
         timeBarrel: 48,
         country: "Brasil",
         region: "Pinto Bandeira",
-        image: "/images/wines/Cave Geisse Terroir Nature.png"
+        image: "/images/wines/Cave Geisse Terroir Nature.png",
+        type: "sparkling",
     },
     {
         name: "Chandon Réserve Brut",
@@ -61,7 +68,8 @@ const wines = [
         timeBarrel: null,
         country: "Brasil",
         region: "Serra Gaúcha",
-        image: "/images/wines/Chandon Réserve Brut.png"
+        image: "/images/wines/Chandon Réserve Brut.png",
+        type: "sparkling",
     },
     {
         name: "Château d'Yquem Sauternes 2019",
@@ -69,7 +77,8 @@ const wines = [
         timeBarrel: 30,
         country: "França",
         region: "Bordeaux",
-        image: "/images/wines/Château d'Yquem Sauternes 2019.png"
+        image: "/images/wines/Château d'Yquem Sauternes 2019.png",
+        type: "white",
     },
     {
         name: "Chateau Minuty 281 2022",
@@ -77,7 +86,8 @@ const wines = [
         timeBarrel: null,
         country: "França",
         region: "Provence",
-        image: "/images/wines/Chateau Minuty 281 2022.png"
+        image: "/images/wines/Chateau Minuty 281 2022.png",
+        type: "rose",
     },
     {
         name: "Cono Sur Bicicleta Reserva Viognier 2023",
@@ -85,7 +95,8 @@ const wines = [
         timeBarrel: null,
         country: "Chile",
         region: "Vale Central",
-        image: "/images/wines/Cono Sur Bicicleta Reserva Viognier 2023.png"
+        image: "/images/wines/Cono Sur Bicicleta Reserva Viognier 2023.png",
+        type: "white",
     },
     {
         name: "Don Guerino Reserva Tannat",
@@ -93,15 +104,35 @@ const wines = [
         timeBarrel: 6,
         country: "Brasil",
         region: "Serra Gaúcha",
-        image: "/images/wines/Don Guerino Reserva Tannat.png"
+        image: "/images/wines/Don Guerino Reserva Tannat.png",
+        type: "red",
     },
     {
-        name: "Gaja Barbaresco 2019",
-        grape: "Nebbiolo",
-        timeBarrel: 24,
+        name: "Cava Freixenet Cordon Negro Brut",
+        grape: "Macabeo, Xarel·lo, Parellada",
+        timeBarrel: 12,
+        country: "Espanha",
+        region: "Catalunha",
+        image: "/images/wines/Cava Freixenet Cordon Negro Brut.png",
+        type: "sparkling",
+    },
+    {
+        name: "Sancerre Sélection Première 2022",
+        grape: "Sauvignon Blanc",
+        timeBarrel: null,
+        country: "França",
+        region: "Loire",
+        image: "/images/wines/Sancerre Sélection Première 2022.png",
+        type: "white",
+    },
+    {
+        name: "Soave Classico 2022",
+        grape: "Garganega, Trebbiano",
+        timeBarrel: null,
         country: "Itália",
-        region: "Piemonte",
-        image: "/images/wines/Gaja Barbaresco 2019.png"
+        region: "Veneto",
+        image: "/images/wines/Soave Classico 2022.png",
+        type: "white",  
     },
     {
         name: "Garzon Balasto",
@@ -109,7 +140,8 @@ const wines = [
         timeBarrel: 20,
         country: "Uruguai",
         region: "Maldonado",
-        image: "/images/wines/Garzon Balasto.png"
+        image: "/images/wines/Garzon Balasto.png",
+        type: "red",
     },
     {
         name: "Herdade do Rocim Mariana Rosé",
@@ -117,15 +149,35 @@ const wines = [
         timeBarrel: null,
         country: "Portugal",
         region: "Alentejo",
-        image: "/images/wines/Herdade do Rocim Mariana Rosé.png"
+        image: "/images/wines/Herdade do Rocim Mariana Rosé.png",
+        type: "rose",
     },
     {
         name: "Izadi Larrosa Rosé",
-        grape: " Garnacha",
+        grape: "Garnacha",
         timeBarrel: null,
         country: "Espanha",
         region: "Rioja",
-        image: "/images/wines/Izadi Larrosa Rosé.png"
+        image: "/images/wines/Izadi Larrosa Rosé.png",
+        type: "rose",
+    },
+    {
+        name: "Soave Classico 2022",
+        grape: "Garganega, Trebbiano",
+        timeBarrel: null,
+        country: "Itália",
+        region: "Veneto",
+        image: "/images/wines/Soave Classico 2022.png",
+        type: "white",  
+    },
+    {
+        name: "Soalheiro Espumante Bruto Alvarinho",
+        grape: "Alvarinho",
+        timeBarrel: null,
+        country: "Portugal",
+        region: "Minho",
+        image: "/images/wines/Soalheiro Espumante Bruto Alvarinho.png",
+        type: "sparkling",
     },
     {
         name: "Kadette Cape Blend 2021",
@@ -133,7 +185,8 @@ const wines = [
         timeBarrel: 12,
         country: "África do Sul",
         region: "Cidade do Cabo",
-        image: "/images/wines/Kadette Cape Blend 2021.png"
+        image: "/images/wines/Kadette Cape Blend 2021.png",
+        type: "red",
     },
     {
         name: "Le Petit Lion du Marquis de Las Cases",
@@ -141,7 +194,27 @@ const wines = [
         timeBarrel: 14,
         country: "França",
         region: "Bordeaux",
-        image: "/images/wines/Le Petit Lion du Marquis de Las Cases.png"
+        image: "/images/wines/Le Petit Lion du Marquis de Las Cases.png",
+        type: "red",
+    },
+    {
+        name: "Champagne Moët & Chandon Impérial Brut",
+        grape: "Pinot Noir, Pinot Meunier, Chardonnay",
+        timeBarrel: 24,
+        country: "França",
+        region: "Champagne",
+        image: "/images/wines/Champagne Moët & Chandon Impérial Brut.png",
+        type: "sparkling",
+    },
+    {
+        name: "Vinho Porto Messias Tawny",
+        grape: "Tinta Barroca, Tinta Roriz, Tinta Cão, Touriga Nacional",
+        // envelhecido em carvalho até engarrafar, em média é necessário 7 anos no mínimo.
+        timeBarrel: 84,
+        country: "Portugal",
+        region: "Douro",
+        image: "/images/wines/Vinho Porto Messias Tawny.png",
+        type: "liqueur",  
     },
     {
         name: "Marques de Casa Concha Chardonnay",
@@ -149,7 +222,8 @@ const wines = [
         timeBarrel: 12,
         country: "Chile",
         region: "Vale de Limarí",
-        image: "/images/wines/Marques de Casa Concha Chardonnay.png"
+        image: "/images/wines/Marques de Casa Concha Chardonnay.png",
+        type: "white",
     },
     {
         name: "Marques de Murrieta Edicion Especial",
@@ -157,7 +231,8 @@ const wines = [
         timeBarrel: 25,
         country: "Espanha",
         region: "Rioja",
-        image: "/images/wines/Marques de Murrieta Edicion Especial.png"
+        image: "/images/wines/Marques de Murrieta Edicion Especial.png",
+        type: "red",
     },
     {
         name: "Montresor Satinato Amarone della Valpolicella",
@@ -165,7 +240,18 @@ const wines = [
         timeBarrel: 36,
         country: "Itália",
         region: "Valpolicella",
-        image: "/images/wines/Montresor Satinato Amarone della Valpolicella.png"
+        image: "/images/wines/Montresor Satinato Amarone della Valpolicella.png",
+        type: "red",
+    },
+    {
+        name: "Vinho Porto Messias Ruby",
+        grape: "Tinta Barroca, Tinta Roriz, Tinta Cão, Touriga Franca, Touriga Nacional",
+        // envelhecido em carvalho até engarrafar, em média é necessário 7 anos no mínimo.
+        timeBarrel: 60,
+        country: "Portugal",
+        region: "Douro",
+        image: "/images/wines/Vinho Porto Messias Ruby.png",
+        type: "liqueur",  
     },
     {
         name: "Niepoort Redoma Reserva Branco Douro 2020",
@@ -173,7 +259,8 @@ const wines = [
         timeBarrel: 8,
         country: "Portugal",
         region: "Douro",
-        image: "/images/wines/Niepoort Redoma Reserva Branco Douro 2020.png"
+        image: "/images/wines/Niepoort Redoma Reserva Branco Douro 2020.png",
+        type: "white",
     },
     {
         name: "Norton Rosado De Malbec 2018",
@@ -181,7 +268,8 @@ const wines = [
         timeBarrel: null,
         country: "Argentina",
         region: "Mendoza",
-        image: "/images/wines/Norton Rosado De Malbec 2018.png"
+        image: "/images/wines/Norton Rosado De Malbec 2018.png",
+        type: "rose",
     },
     {
         name: "Pinot Grigio Delle Venezie Castelnuovo Doc Branco",
@@ -189,7 +277,8 @@ const wines = [
         timeBarrel: null,
         country: "Itália",
         region: "Delle Venezie",
-        image: "/images/wines/Pinot Grigio Delle Venezie Castelnuovo Doc Branco.png"
+        image: "/images/wines/Pinot Grigio Delle Venezie Castelnuovo Doc Branco.png",
+        type: "white",
     },
     {
         name: "Quinta de Bons Ventos",
@@ -197,7 +286,8 @@ const wines = [
         timeBarrel: 4,
         country: "Portugal",
         region: "Lisboa",
-        image: "/images/wines/Quinta de Bons Ventos.png"
+        image: "/images/wines/Quinta de Bons Ventos.png",
+        type: "red",
     },
     {
         name: "Quinta do Crasto Vinha da Ponte",
@@ -205,7 +295,17 @@ const wines = [
         timeBarrel: 20,
         country: "Portugal",
         region: "Douro",
-        image: "/images/wines/Quinta do Crasto Vinha da Ponte.png"
+        image: "/images/wines/Quinta do Crasto Vinha da Ponte.png",
+        type: "red",
+    },
+    {
+        name: "Gérard Bertrand Maury Tuilé 1989",
+        grape: "Grenache",
+        timeBarrel: 12,
+        country: "França",
+        region: "Roussillon",
+        image: "/images/wines/Gérard Bertrand Maury Tuilé 1989.png",
+        type: "liqueur",  
     },
     {
         name: "Tormaresca Calafuria",
@@ -213,7 +313,8 @@ const wines = [
         timeBarrel: null,
         country: "Itália",
         region: "Puglia",
-        image: "/images/wines/Tormaresca Calafuria.png"
+        image: "/images/wines/Tormaresca Calafuria.png",
+        type: "rose",
     },
     {
         name: "Trapiche Astica Torrontés",
@@ -221,8 +322,18 @@ const wines = [
         timeBarrel: null,
         country: "Argentina",
         region: "Mendoza",
-        image: "/images/wines/Trapiche Astica Torrontés.png"
-    }
+        image: "/images/wines/Trapiche Astica Torrontés.png",
+        type: "white",
+    },
+    {
+        name: "Cantine Pellegrino Oro D.O.P. Marsala Superiore Riserva",
+        grape: "Catarratto, Grillo",
+        timeBarrel: 48,
+        country: "Itália",
+        region: "Marsala",
+        image: "/images/wines/Cantine Pellegrino Oro D.O.P. Marsala Superiore Riserva.png",
+        type: "liqueur",  
+    },
 ];
 
 export default wines;
