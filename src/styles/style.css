@@ -25,6 +25,10 @@
 
     /* animations */
     --animate-showDown: show-down 0.3s forwards;
+    --animate-showTop: show-top 0.3s forwards;
+    --animate-showLeft: show-left 0.3s forwards;
+    --animate-showRight: show-right 0.3s forwards;
+
     --animate-loadingButton: loading-button 0.8s infinite;
 }
 
@@ -45,6 +49,42 @@
     100%{
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes show-top {
+    0%{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes show-left {
+    0%{
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes show-right {
+    0%{
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateX(0);
     }
 }
 
@@ -124,6 +164,10 @@
     .button-ia > span:nth-of-type(3){
         @apply animate-bounce;
         animation-delay: 0.6s;
+    }
+
+    .activeSectionButton{
+        @apply bg-gold;
     }
 
     /* style to ia generation */
