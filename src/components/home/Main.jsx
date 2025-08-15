@@ -1,4 +1,4 @@
-import ChoiceWineSection from './ChoiceWineSection';
+import ChoiceTypeWine from './ChoiceTypeWine';
 import IaSection from './IaSection';
 import InitSection from './InitSection';
 
@@ -6,7 +6,7 @@ const Main = () => {
     return (
         <main>
             <InitSection/>
-            <ChoiceWineSection/>
+            <ChoiceTypeWine/>
             <IaSection/>
         </main>
     )
