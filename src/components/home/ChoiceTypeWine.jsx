@@ -72,7 +72,7 @@ const ChoiceTypeWine = () => {
             </div>
             <nav 
                 ref={refButtonsSlide}
-                className='flex items-center justify-center gap-4 
+                className='mt-[60px] flex items-center justify-center gap-4 
                 *:w-5 *:h-5 *:rounded-full 
                 *:bg-beige dark:*:bg-light-gray *:cursor-pointer'
             >
