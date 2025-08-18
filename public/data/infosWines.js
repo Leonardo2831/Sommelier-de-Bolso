@@ -36,7 +36,7 @@ export const infosRed = {
 
 export const infosLiqueur = {
     title: 'Licoroso',
-    text: '',
-    listCharacteristics: [],
+    text: 'Vinho licoroso ou fortificado, é uma categoria especial onde é adicionado um destilado. Esse método aumenta o grau alcoólico e, na maioria dos casos, preserva a doçura natural da uva. O resultado são vinhos duradouros após abertos e também com grande potencial de envelhecimento.',
+    listCharacteristics: ['Traz uma doçura extremamente variável, podendo ser seco aos vinhos mais doces do mundo.', 'GEralmente são vinhos encorpados e densos.', 'Geralmente traz um teor alcoólico alto, situando-se entre 15% e 22%, contribuindo para a estrutura e também capacidade de conservação.'],
     wineSelected: wineLiqueur[Math.floor(Math.random() * wineLiqueur.length)],
 };
