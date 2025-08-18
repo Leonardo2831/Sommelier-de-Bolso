@@ -1,14 +1,25 @@
 const SectionYouWine = ({ srcImage, altImage, subTitleWine, textWine, listWine }) => {
     return (
-        <section>
-            <figure>
-                <img src={srcImage} alt={altImage} />
+        <section className="flex-col sm:flex-row">
+            <figure 
+                className='relative overflow-hidden h-fit flex-1
+                flex items-center justify-center'
+            >
+                <img 
+                    className='-rotate-[7deg] w-full max-w-[250px] aspect-[2/3] object-contain'
+                    src={srcImage} 
+                    alt={altImage} 
+                />
             </figure>
-            <div>
-                <h3 className='text-[32px] text-maple dark:text-gold'>{subTitleWine}</h3>
+            <div className="flex-1">
+                <h3 className='mb-4 font-semibold text-[32px] text-maple dark:text-gold'>{subTitleWine}</h3>
                 <p className='text-base text-gray dark:text-beige'>{textWine}</p>
-                <h4>Características</h4>
-                <ul className='list-disc *:text-base *:text-gray dark:*:text-beige'>
+                <h4 className="my-[15px] font-medium text-2xl text-black dark:text-beige">Características</h4>
+                <ul
+                    className='list-disc list-inside 
+                    *:first:m-0 *:mt-[10px]
+                    *:text-base *:text-gray dark:*:text-beige'
+                >
                     {listWine.map((text, index) => {
                         return (
                             <li key={index}>
