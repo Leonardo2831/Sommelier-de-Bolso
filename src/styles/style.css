@@ -3,8 +3,7 @@
 @theme {
     --color-gold: #C3A576;
 
-    --color-black: #111111;
-    --color-background-black: #141414;
+    --color-black: #141414;
     --color-gray: #202020;
     --color-light-gray: #404040;
 
@@ -100,7 +99,7 @@
     }
 
     #root{
-        @apply container min-h-screen bg-cream dark:bg-background-black;
+        @apply container min-h-screen bg-cream dark:bg-black;
     }
 
     .shadow{
