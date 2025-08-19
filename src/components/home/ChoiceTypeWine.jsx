@@ -1,7 +1,7 @@
 import React from 'react';
 import { infosSparkling, infosWhite, infosRose, infosRed, infosLiqueur } from '../../../public/data/infosWines.js';
 
-import SectionYouWine from '../SectionYouWine.jsx';
+import SectionYouWine from './SectionYouWine.jsx';
 
 const ChoiceTypeWine = () => {
     const [valueSection, setValueSection] = React.useState('');
@@ -12,11 +12,9 @@ const ChoiceTypeWine = () => {
         const contentSections = contentButtons.previousElementSibling;
 
         const classButtonActive = 'activeSectionButton';
-        const classAnimationSection = ['animate-showDown', 'animate-showTop', 'animate-showLeft', 'animate-showRight'];
+        const classAnimationSection = ['animate-showDown', 'animate-showLeft', 'animate-showTop', 'animate-showRight'];
         const classFlex = 'flex';
         const classHidden = 'hidden';
-
-        const randomAnimation = Math.floor(Math.random() * classAnimationSection.length);
 
         contentSections.classList.forEach((classItem) => {
             contentSections.classList.remove(classItem);
@@ -38,13 +36,17 @@ const ChoiceTypeWine = () => {
                 section.classList.add(classFlex);
                 section.classList.remove(classHidden);
                 
-                contentSections.classList.add(classAnimationSection[randomAnimation]);
+                if(index != 4){
+                    contentSections.classList.add(classAnimationSection[0]);
+                } else {
+                    contentSections.classList.add(classAnimationSection[index]);
+                }
             }
         });
     }, [valueSection]);
 
     return (
-        <section className='content-choiceYou p-10 sm:p-[60px]'>
+        <section id='choiceTypeWine' className='content-choiceYou p-10 sm:p-[60px]'>
             <h2 className='text-4xl font-semibold mb-10 text-maple dark:text-gold'>Qual vinho faz o seu estilo?</h2>
             <div>
                 <SectionYouWine 
