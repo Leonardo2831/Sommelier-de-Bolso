@@ -1,6 +1,6 @@
 const SectionYouWine = ({ srcImage, altImage, subTitleWine, textWine, listWine }) => {
     return (
-        <section className="flex-col sm:flex-row">
+        <section className="items-center gap-10 flex-col sm:flex-row sm:justify-center">
             <figure 
                 className='relative overflow-hidden h-fit flex-1
                 flex items-center justify-center'
