@@ -1,5 +1,5 @@
 import React from 'react';
-import { infosSparkling, infosWhite, infosRose, infosRed, infosLiqueur } from '../../../public/data/infosWines.js';
+import { infosSparkling, infosWhite, infosRose, infosRed, infosLiqueur } from '../../../../public/data/infosWines.js';
 
 import SectionYouWine from './SectionYouWine.jsx';
 
