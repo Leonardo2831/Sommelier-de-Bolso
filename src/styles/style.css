@@ -207,12 +207,12 @@
     .content-responseIA li,
     .content-responseIA tr,
     .content-responseIA td{
-        @apply font-normal text-lg text-gray dark:text-cream;
+        @apply mt-2 font-sans font-normal text-lg text-gray dark:text-cream;
     }
 
     .content-responseIA tr > strong,
     .content-responseIA td > strong{
-        @apply font-semibold text-lg text-gray dark:text-cream;
+        @apply font-sans font-semibold text-lg text-gray dark:text-cream;
     }
 
     .content-responseIA b,
@@ -226,7 +226,7 @@
     }
 
     .content-responseIA ul{
-        @apply list-disc list-inside ml-6;
+        @apply list-disc list-inside ml-6 my-3;
     }
 
     .content-responseIA ol{

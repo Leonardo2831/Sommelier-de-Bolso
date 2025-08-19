@@ -16,9 +16,9 @@ const LinksNav = () => {
     return (
         <ul 
             className='flex flex-wrap items-center gap-3 
-            *:p-2 *:text-[32px] *:font-medium *:cursor-pointer 
+            *:p-2 *:text-2xl *:font-medium *:cursor-pointer 
             *:text-maple *:hover:text-red dark:*:text-gold dark:*:hover:text-beige
-            *:transition-colors *:duration-150 max-sm:*:text-2xl'>
+            *:transition-colors *:duration-150 sm:*:text-[32px] md:text-[32px]'>
             <li>
                 <Link to='/'>Home</Link>
             </li>

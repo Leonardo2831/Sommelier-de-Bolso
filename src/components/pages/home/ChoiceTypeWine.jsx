@@ -35,11 +35,11 @@ const ChoiceTypeWine = () => {
             if(Number(valueSection) === (index)){
                 section.classList.add(classFlex);
                 section.classList.remove(classHidden);
-                
+ 
                 if(index != 4){
-                    contentSections.classList.add(classAnimationSection[0]);
-                } else {
                     contentSections.classList.add(classAnimationSection[index]);
+                } else {
+                    contentSections.classList.add(classAnimationSection[0]);
                 }
             }
         });
@@ -47,7 +47,7 @@ const ChoiceTypeWine = () => {
 
     return (
         <section id='choiceTypeWine' className='content-choiceYou p-10 sm:p-[60px]'>
-            <h2 className='text-4xl font-semibold mb-10 text-maple dark:text-gold'>Qual vinho faz o seu estilo?</h2>
+            <h2 className='text-4xl font-semibold mb-10 text-maple dark:text-gold sm:text-[44px]'>Qual vinho faz o seu estilo?</h2>
             <div>
                 <SectionYouWine 
                     srcImage={infosSparkling.wineSelected.image} 
