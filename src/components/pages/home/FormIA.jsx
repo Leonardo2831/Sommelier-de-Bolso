@@ -1,7 +1,7 @@
 import React from 'react';
 import showdown from 'showdown';
 
-import Input from './../Input';
+import Input from './../../Input';
 
 const FormIA = () => {
     const refButton = React.useRef(null);

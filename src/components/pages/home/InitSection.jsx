@@ -1,4 +1,4 @@
-import wines from '../../../public/data/wines.js';
+import wines from '/data/wines.js';
 
 const InitSection = () => {
     const choiceWine = Math.floor(Math.random() * wines.length);
