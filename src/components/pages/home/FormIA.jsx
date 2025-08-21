@@ -92,7 +92,7 @@ const FormIA = () => {
                 <button 
                     ref={refButton}
                     type='submit'
-                    className='button-ia py-2 px-6 font-semibold text-2xl 
+                    className='button-ia uppercase py-3 px-6 font-semibold text-2xl 
                     bg-gold dark:bg-maple text-white 
                     rounded-md cursor-pointer 
                     [@media(min-width:480px)]:col-span-2 [@media(min-width:480px)]:text-3xl'
