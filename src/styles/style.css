@@ -112,6 +112,18 @@
         transform: translate(67px);
     }
 
+    div.activeMenu > div:nth-of-type(1){
+        @apply rotate-45 translate-y-3;
+    }
+
+    div.activeMenu > div:nth-of-type(2){
+        @apply opacity-0;
+    }
+
+    div.activeMenu > div:nth-of-type(3){
+        @apply -rotate-45 -translate-y-[19px];
+    }
+
     [data-button-menu]:hover > [data-sub-menu]{
         @apply flex animate-showDown;
     }
