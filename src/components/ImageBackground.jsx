@@ -2,7 +2,7 @@ import React from 'react';
 
 const ImageBackground = ({ srcImage, altImage }) => {
     return (
-        <img src={srcImage} alt={altImage} />
+        <img className='w-full' src={srcImage} alt={altImage} />
     )
 }
 
