@@ -137,7 +137,7 @@
     }
 
     .transform-valueLogo{
-        @apply -left-[80%];
+        @apply -left-[80%] top-[110%];
     }
 
     .transform-valueLinks{
