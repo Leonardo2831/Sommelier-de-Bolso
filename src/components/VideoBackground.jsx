@@ -5,13 +5,13 @@ const VideoBackground = ({ optionImage, srcVideo, typeVideo }) => {
 
     React.useEffect(() => {
         if(refVideo){
-            refVideo.current.playbackRate = 0.5;
+            refVideo.current.playbackRate = 0.7;
         }
     }, []);
 
     return (
         <video ref={refVideo} 
-            className='w-full' 
+            className='w-full'
             poster={optionImage} 
             loop muted autoPlay
         >
