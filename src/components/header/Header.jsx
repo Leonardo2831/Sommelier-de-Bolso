@@ -39,7 +39,7 @@ const Header = () => {
             </div>
             <nav>
                 <LinksNav options={options} />
-                <SubMenu options={options} transform="left-valueLinks" ref={menuRef} />
+                <SubMenu options={options} styleTransform="transform-valueLinks" ref={menuRef} />
             </nav>
             
             <Logo visibleMenu={true} />

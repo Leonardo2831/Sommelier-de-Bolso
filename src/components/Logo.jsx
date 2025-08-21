@@ -32,7 +32,7 @@ const Logo = ({ visibleMenu }) => {
             <img className="min-w-[100px]" src={urlLogo} alt={altLogo} />
             <SubMenu
                 ref={menuRef}
-                transform="left-valueLogo"
+                styleTransform="transform-valueLogo"
                 options={[
                     { text: 'Configurações' },
                     { element: <ButtonToggleMode /> }
