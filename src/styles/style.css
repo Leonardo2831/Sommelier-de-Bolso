@@ -124,12 +124,12 @@
         @apply flex animate-showDown;
     }
 
-    .left-valueLogo{
+    .transform-valueLogo{
         @apply -left-[80%];
     }
 
-    .left-valueLinks{
-        @apply left-0 top-[110%];
+    .transform-valueLinks{
+        @apply left-[56px] top-[75%];
     }
 
     .input-item:focus + .input-focusText{
