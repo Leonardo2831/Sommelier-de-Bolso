@@ -125,11 +125,11 @@
     }
 
     .left-valueLogo{
-        @apply -left-full;
+        @apply -left-[80%];
     }
 
     .left-valueLinks{
-        @apply -left-1/2;
+        @apply left-0 top-[110%];
     }
 
     .input-item:focus + .input-focusText{
@@ -147,7 +147,7 @@
         @apply animate-loadingButton;
     }
 
-        .button-ia > p{
+    .button-ia > p{
         @apply inline-block;
     }
 
