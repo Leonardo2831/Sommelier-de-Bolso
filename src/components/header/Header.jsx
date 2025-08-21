@@ -36,7 +36,8 @@ const Header = () => {
             <div 
                 ref={mobileRef}
                 className='flex flex-col gap-3 cursor-pointer p-4 sm:hidden
-                    *:w-12 *:h-1 *:bg-maple dark:*:bg-gold 
+                    *:w-12 *:h-1 *:bg-maple hover:*:bg-red 
+                    dark:*:bg-gold dark:hover:*:bg-beige 
                     *:transition-all *:duration-300 *:ease-in-out'
                 onClick={(event) => {
                         event.stopPropagation(); 
