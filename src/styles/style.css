@@ -158,7 +158,7 @@
     }
 
     .input-item:focus + .input-focusText{
-        transform: translate(-15px, -45px);
+        transform: translate(-18px, -45px);
         @apply text-gray dark:text-beige;
         transition: all 0.3s ease-out;
     }

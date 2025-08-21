@@ -85,7 +85,12 @@ const FormIA = () => {
             }}
         >
             <h3 className='text-center text-[40px] text-maple dark:text-gold font-semibold mb-[50px]'>Sommelier IA</h3>
-            <section className='grid grid-cols-1 gap-x-[30px] gap-y-[50px] [@media(min-width:480px)]:*:first:col-span-2 [@media(min-width:480px)]:grid-cols-2'>
+            <section 
+                className='grid grid-cols-1 gap-x-[30px] gap-y-[50px]
+                [@media(min-width:480px)]:*:first:col-span-2 
+                [@media(min-width:480px)]:grid-cols-2
+                sm:gap-y-[54px]'
+            >
                 <Input ref={refInputQuestion} text="Digite sua dúvida" type="text" id="question" required />
                 <Input ref={refInputWine} text="Vinho (opcional)" type="text" id="wine" data-optional={true}/>
                 <Input ref={refInputGrape} text="Uvas (opcional)" type="text" id="grape" data-optional={true}/>
