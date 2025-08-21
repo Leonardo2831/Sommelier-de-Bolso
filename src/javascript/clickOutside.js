@@ -1,10 +1,8 @@
 export default function initClickOutside(open, setOpen, menuRef){
-    const clickOutside = (event) => {        
-        if (
-            menuRef.current &&
-            !menuRef.current.contains(event.target)
-        ) {
+    const clickOutside = (event) => {  
+        if (!menuRef.current.contains(event.target)){
             menuRef.current.classList.remove('active');
+                
             setOpen(false);
         }
     }
@@ -14,5 +12,6 @@ export default function initClickOutside(open, setOpen, menuRef){
     }
 
     document.addEventListener('click', clickOutside);
+    
     return () => document.removeEventListener('click', clickOutside);
 }
