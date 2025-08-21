@@ -4,15 +4,28 @@ import { infosSparkling, infosWhite, infosRose, infosRed, infosLiqueur } from '.
 import SectionYouWine from './SectionYouWine.jsx';
 
 const ChoiceTypeWine = () => {
-    const [valueSection, setValueSection] = React.useState('');
+    const [valueSection, setValueSection] = React.useState(0);
     const refButtonsSlide = React.useRef(null);
+
+    React.useEffect(() => {
+        setTimeout(() => {
+            if(valueSection === 4){
+                setValueSection(0);
+            } else {
+                setValueSection(valueSection + 1);
+            }
+        }, 60 * 1000);
+    }, [valueSection]);
 
     React.useEffect(() => {
         const contentButtons = refButtonsSlide.current;
         const contentSections = contentButtons.previousElementSibling;
 
         const classButtonActive = 'activeSectionButton';
-        const classAnimationSection = ['animate-showDown', 'animate-showLeft', 'animate-showTop', 'animate-showRight'];
+        const classAnimationSection = [
+            'animate-showDown', 'animate-showLeft', 
+            'animate-showTop', 'animate-showRight', 'animate-showDownDiagonal'
+        ];
         const classFlex = 'flex';
         const classHidden = 'hidden';
 
@@ -23,7 +36,7 @@ const ChoiceTypeWine = () => {
         Array.from(contentButtons.children).forEach((button, index) => {
             button.classList.remove(classButtonActive);
 
-            if(Number(valueSection) === index){
+            if(valueSection === index){
                 button.classList.add(classButtonActive);
             }
         });
@@ -32,15 +45,10 @@ const ChoiceTypeWine = () => {
             section.classList.remove(classFlex);
             section.classList.add(classHidden);          
 
-            if(Number(valueSection) === (index)){
+            if(valueSection === (index)){
                 section.classList.add(classFlex);
                 section.classList.remove(classHidden);
- 
-                if(index != 4){
-                    contentSections.classList.add(classAnimationSection[index]);
-                } else {
-                    contentSections.classList.add(classAnimationSection[0]);
-                }
+                contentSections.classList.add(classAnimationSection[index]);
             }
         });
     }, [valueSection]);
@@ -79,23 +87,23 @@ const ChoiceTypeWine = () => {
                 *:bg-beige dark:*:bg-light-gray *:cursor-pointer'
             >
                 <div id='section0' className='activeSectionButton' onClick={() => {
-                    const newId = refButtonsSlide.current.children[0].id.replace('section', '');
+                    const newId = Number(refButtonsSlide.current.children[0].id.replace('section', ''));
                     setValueSection(newId);
                 }}></div>
                 <div id='section1' onClick={() => {
-                    const newId = refButtonsSlide.current.children[1].id.replace('section', '');
+                    const newId = Number(refButtonsSlide.current.children[1].id.replace('section', ''));
                     setValueSection(newId);
                 }}></div>
                 <div id='section2' onClick={() => {
-                    const newId = refButtonsSlide.current.children[2].id.replace('section', '');
+                    const newId = Number(refButtonsSlide.current.children[2].id.replace('section', ''));
                     setValueSection(newId);
                 }}></div>
                 <div id='section3' onClick={() => {
-                    const newId = refButtonsSlide.current.children[3].id.replace('section', '');
+                    const newId = Number(refButtonsSlide.current.children[3].id.replace('section', ''));
                     setValueSection(newId);
                 }}></div>
                 <div id='section4' onClick={() => {
-                    const newId = refButtonsSlide.current.children[4].id.replace('section', '');
+                    const newId = Number(refButtonsSlide.current.children[4].id.replace('section', ''));
                     setValueSection(newId);
                 }}></div>
             </nav>
