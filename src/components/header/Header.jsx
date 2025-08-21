@@ -9,8 +9,17 @@ const Header = () => {
     const [open, setOpen] = React.useState(false);
 
     const menuRef = React.useRef(null);
+    const mobileRef = React.useRef(null);
 
-    React.useEffect(() => {    
+    React.useEffect(() => {
+        if(open){
+            mobileRef.current.classList.add('activeMenu');
+        } else {          
+            mobileRef.current.classList.remove('activeMenu');
+        }
+    }, [open]);
+
+    React.useEffect(() => { 
         initClickOutside(open, setOpen, menuRef)
     }, [open]);
 
@@ -25,11 +34,13 @@ const Header = () => {
     return ( 
         <header className='relative flex justify-between items-center gap-3 px-10 py-5'>
             <div 
-                className='flex flex-col gap-3 cursor-pointer p-4 
-                *:w-12 *:h-1 *:bg-maple dark:*:bg-gold sm:hidden'
+                ref={mobileRef}
+                className='flex flex-col gap-3 cursor-pointer p-4 sm:hidden
+                    *:w-12 *:h-1 *:bg-maple dark:*:bg-gold 
+                    *:transition-all *:duration-300 *:ease-in-out'
                 onClick={(event) => {
                         event.stopPropagation(); 
-                        setOpen(!open)
+                        setOpen(!open);
                     }
                 }
             >
