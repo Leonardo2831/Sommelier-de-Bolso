@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Head from '../../Head';
-import InitPages from '../../initPages';
+import InitPages from '../../InitPages';
 
 const MainOakBarrel = () => {
     return (
