@@ -34,11 +34,12 @@ const MainTerroir = () => {
             <AffectedGrapes/>
             <div className='my-5 flex justify-center items-center'>
                 <Link to="Uvas" 
-                    className='uppercase font-semibold font-sans 
+                    className='flex items-center justify-center gap-5 uppercase font-semibold font-sans 
                     text-2xl px-9 py-3 bg-gold text-white
                     max-w-[300px] w-full rounded-[10px] text-center'
                 >
-                    ver mais -&gt;
+                    <p>Ver Mais</p>
+                    <img className='w-8 h-8' src="/icons/arrow.svg" alt="Sobre as uvas" />
                 </Link>
             </div>
             <SectionListTerroir 
