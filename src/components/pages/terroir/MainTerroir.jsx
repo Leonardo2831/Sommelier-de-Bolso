@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
 import Head from '../../Head';
-import InitPages from '../../initPages';
+import InitPages from '../../InitPages';
 import AboutTerroir from './AboutTerroir';
 import AffectedGrapes from './AffectedGrapes';
 import SectionListTerroir from './SectionListTerroir';
