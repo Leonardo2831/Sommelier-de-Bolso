@@ -5,16 +5,18 @@ const AffectedGrapes = () => {
     const textPinotNoir = 'Para seu cultivo, é necessário solo e clima em perfeita sintonia, leveduras nativas e o cuidadoso uso do amadurecimento em madeira, são eles requisitos mínimos para o sucesso dessa exigente uva. Contudo, com todos os requisitos, a recompensa é extremamente compensadora, resultando em vinhos elegantes e de complexidade singurares.';
 
     return (
-        <section className='grid gap-[30px] p-10'>
-            <h3 className='text-[32px] font-semibold text-maple dark:text-gold sm:text-[36px]'>
+        <section className='p-10'>
+            <h3 className='mb-[30px] text-[32px] font-semibold text-maple dark:text-gold sm:text-[36px]'>
                 Uvas mais sensíveis às mudanças do terroir
             </h3>
-            <GrapeTerroir nameGrape='Riesling' textGrape={textRiesling} 
-                srcImage='https://upload.wikimedia.org/wikipedia/commons/c/c4/Grape_near_Sancerre.jpg' 
-            />
-            <GrapeTerroir nameGrape='Pinot Noir' textGrape={textPinotNoir} 
-                srcImage='https://upload.wikimedia.org/wikipedia/commons/7/76/Riesling_grapes_leaves.jpg' 
-            />
+            <div className='grid gap-[50px]'>
+                <GrapeTerroir nameGrape='Riesling' textGrape={textRiesling} 
+                    srcImage='https://upload.wikimedia.org/wikipedia/commons/c/c4/Grape_near_Sancerre.jpg' 
+                />
+                <GrapeTerroir nameGrape='Pinot Noir' textGrape={textPinotNoir} 
+                    srcImage='https://upload.wikimedia.org/wikipedia/commons/7/76/Riesling_grapes_leaves.jpg' 
+                />
+            </div>
         </section>
     )
 }
