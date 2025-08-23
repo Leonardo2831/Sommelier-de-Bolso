@@ -16,7 +16,7 @@ const SectionYouWine = ({ srcImage, altImage, subTitleWine, textWine, listWine }
                 <p className='font-sans text-lg text-gray dark:text-beige md:text-xl'>{textWine}</p>
                 <h4 className="my-6 font-medium text-2xl text-black dark:text-beige md:text-3xl">Características</h4>
                 <ul
-                    className='list-disc list-inside 
+                    className='list-disc pl-6 
                     *:first:m-0 *:mt-[10px] *:font-sans
                     *:text-base *:text-gray dark:*:text-beige
                     sm:*:text-lg md:*:text-xl'
