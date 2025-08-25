@@ -6,7 +6,7 @@ const GrapeTerroir = (props) => {
                 <p className="font-sans text-xl text-light-gray dark:text-beige">{props.textGrape}</p>
             </div>
             <figure className="self-center max-w-[300px] min-w-[220px]">
-                <img className="w-full aspect-square rounded-lg" 
+                <img className="shadow w-full aspect-square rounded-lg" 
                     src={props.srcImage} alt={props.nameGrape} 
                 />
             </figure>

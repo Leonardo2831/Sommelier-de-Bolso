@@ -13,4 +13,4 @@ const InitPages = (props) => {
     )
 }
 
-export default InitPages
+export default InitPages;

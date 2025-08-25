@@ -99,7 +99,7 @@ const FormIA = () => {
                     type='submit'
                     className='button-ia uppercase py-3 px-6 font-semibold text-2xl 
                     bg-gold dark:bg-maple text-white 
-                    rounded-md cursor-pointer 
+                    rounded-md cursor-pointer hover:opacity-90 transition-all duration-150
                     [@media(min-width:480px)]:col-span-2 [@media(min-width:480px)]:text-3xl'
                 >
                     <p>Consultar</p>
