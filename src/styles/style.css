@@ -120,6 +120,10 @@
         box-shadow: -1px 1px 2px var(--color-shadow);
     }
 
+    a.active > p{
+        @apply border-b-3 border-maple dark:border-gold hover:border-red dark:hover:border-beige;
+    }
+
     /* styles js */
     input:checked + [data-mode]{
         transform: translate(67px);

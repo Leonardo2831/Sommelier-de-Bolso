@@ -10,7 +10,10 @@ const LinksNav = ({ options }) => {
             {options.map((option, index) => {
                 return (
                     <li key={index}>
-                        <NavLink to={option.link}>{option.text}</NavLink>
+                        <NavLink className={({ isActive }) => isActive ? 'active font-medium' : 'font-medium'} 
+                            to={option.link}>
+                                <p className="py-2">{option.text}</p>
+                        </NavLink>
                     </li>
                 )
             })}
@@ -19,20 +22,3 @@ const LinksNav = ({ options }) => {
 };
 
 export default LinksNav;
-
-
-// <li onClick={() => {setOpen(!open)}} data-button-menu className='relative'>
-//                 <SubMenu 
-//                     ref={menuRef}
-//                     transform="left-valueLinks"
-//                     options={
-//                         [
-//                             { text: 'Home', link: '/'},
-//                             { text: 'Barricas', link: 'Barricas'}, 
-//                             { text: 'Aromas', link: 'Aromas'},
-//                             { text: 'Uvas', link: 'Uvas'},
-//                             { text: 'Terroir', link: 'Terroir'},
-//                         ]
-//                     } 
-//                 />
-//             </li>

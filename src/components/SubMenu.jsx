@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 // deve desestruturar, pois os valores são passados dentro de um objeto
 const SubMenu = React.forwardRef(function SubMenu({ options, styleTransform }, ref) {
     const styleMenu = 
@@ -23,7 +23,9 @@ const SubMenu = React.forwardRef(function SubMenu({ options, styleTransform }, r
                     >
                         {
                             element ? element : link 
-                            && text ? <Link className="w-full text-center font-medium" to={link}>{text}</Link> 
+                            && text ? <NavLink className={({ isActive }) => isActive ? 'active flex items-center justify-center w-full font-medium' : 'flex items-center justify-center py-2 w-full font-medium'} to={link}>
+                                <p className='w-fit py-2'>{text}</p>
+                            </NavLink> 
                             : text
                         }
                     </li>
