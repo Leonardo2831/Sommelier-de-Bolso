@@ -1,7 +1,13 @@
 import Head from '../../Head';
 import InitPages from '../../InitPages';
+import InfluencesBarrel from './InfluencesBarrel';
 
 const MainOakBarrel = () => {
+    const listInfluences = [
+        '<strong className="text-[22px] font-semibold">Aromas Sofisticados:</strong> Em vez do coco pronunciado, ele tende a conferir notas delicadas de especiarias (cravo, pimenta, canela), baunilha, café, fumo e um característico toque tostado.',
+        '<strong className="text-[22px] font-semibold">Estrutura e Longevidade:</strong> Sendo mais rico em taninos, ele transfere mais corpo, estrutura e complexidade ao vinho, aprimorando a sensação na boca e aumentando significativamente seu potencial de guarda.'
+    ];
+
     return (
         <main>
             <Head titleText='Barricas | Sommelier de Bolso' />
@@ -47,14 +53,7 @@ const MainOakBarrel = () => {
             </section>
             <div className='px-10 pb-[30px]'>
                 <h4 className="mb-[30px] font-medium text-[30px] text-gray dark:text-cream sm:text-3xl">As suas principais influências são:</h4>
-                <ul className='list-disc pl-6 *:font-sans *:text-xl *:text-light-gray dark:*:text-beige'>
-                    <li className='mb-[15px]'>
-                        Aromas Sofisticados: Em vez do coco pronunciado, ele tende a conferir notas delicadas de especiarias (cravo, pimenta, canela), baunilha, café, fumo e um característico toque tostado.
-                    </li>
-                    <li>
-                        Estrutura e Longevidade: Sendo mais rico em taninos, ele transfere mais corpo, estrutura e complexidade ao vinho, aprimorando a sensação na boca e aumentando significativamente seu potencial de guarda.
-                    </li>
-                </ul>
+                <InfluencesBarrel list={listInfluences} />
             </div>
         </main>
     )
