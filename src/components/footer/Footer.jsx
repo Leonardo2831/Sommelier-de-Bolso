@@ -44,8 +44,8 @@ const Footer = ({ listFooter }) => {
                 ]}
             />
             <div 
-                className='p-5 text-center font-sans text-sm font-medium 
-                text-gray dark:text-beige md:text-base md:col-span-2 lg:col-span-3 lg:p-0 lg:pt-5'
+                className='pb-3 text-center font-sans text-sm font-medium 
+                text-gray dark:text-beige sm:p-5 md:text-base md:col-span-2 lg:col-span-3 lg:p-0 lg:pt-5'
             >
                 <p>As imagens de vinhos exibidas neste site são propriedade das vinícolas originais e são utilizadas apenas para fins ilustrativos.</p>
             </div>
