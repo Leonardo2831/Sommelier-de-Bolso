@@ -33,7 +33,7 @@ const MainTerroir = () => {
             <AboutTerroir/>
             <AffectedGrapes/>
             <div className='my-5 flex justify-center items-center'>
-                <Link to="Uvas" 
+                <Link to="/Uvas" 
                     className='flex items-center justify-center gap-3 uppercase font-semibold font-sans 
                     text-2xl px-9 py-3 bg-gold text-white
                     max-w-[300px] w-full rounded-[10px] text-center
