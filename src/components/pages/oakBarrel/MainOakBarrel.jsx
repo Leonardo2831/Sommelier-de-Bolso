@@ -8,7 +8,7 @@ const MainOakBarrel = () => {
             <InitPages
                 title='Barricas'
                 optionImage={true} 
-                srcImage='/public/video/barrel-movement.gif'
+                srcImage='/video/barrel-movement.gif'
                 altImage='Barrica de carvalho'
             />
             <section className='p-10'>
