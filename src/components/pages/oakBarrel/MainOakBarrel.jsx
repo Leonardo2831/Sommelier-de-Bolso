@@ -7,10 +7,9 @@ const MainOakBarrel = () => {
             <Head titleText='Barricas | Sommelier de Bolso' />
             <InitPages
                 title='Barricas'
-                optionVideo={true} 
-                srcVideo='/video/barrel-movement.mp4'
-                imageOption='/video/background-barrel.jpg'
-                typeVideo='video/mp4'
+                optionImage={true} 
+                srcImage='/public/video/barrel-movement.gif'
+                altImage='Barrica de carvalho'
             />
             <section className='p-10'>
                 <h2 className='mb-[30px] text-4xl font-semibold text-maple dark:text-gold sm:text-[40px]'>Vinho e a madeira</h2>
