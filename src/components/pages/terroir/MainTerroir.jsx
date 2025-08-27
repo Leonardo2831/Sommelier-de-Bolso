@@ -26,8 +26,8 @@ const MainTerroir = () => {
             <InitPages 
                 title='Terroir'
                 optionVideo={true} 
-                srcVideo={'/video/terroir-movement.mp4'} 
-                imageOption={'/video/background-terroir.jpg'} 
+                srcVideo='/video/terroir-movement.mp4' 
+                imageOption='/video/background-terroir.jpg' 
                 typeVideo='video/mp4' 
             />
             <AboutTerroir/>
