@@ -9,8 +9,9 @@ const AboutTerroir = () => {
                     Terroir é uma palavra que frequentemente aparece quando o assunto é  vinho. Ele é o conjunto de fatores, como subsolo, relevo, insolação, chuvas, ventos e quaisquer outros fatores da natureza geológica ou climática, que acabam por determinar o caráter da uva, que futuramente será vinho.
                 </p>
                 <div 
-                    className='flex flex-wrap justify-center gap-5 
-                    md:grid md:grid-cols-[auto_auto]'
+                    className='overflow-x-auto max-w-[300px] flex gap-5 pb-5 
+                    [@media(min-width:480px)]:justify-center [@media(min-width:480px)]:pb-0
+                    [@media(min-width:480px)]:max-w-full [@media(min-width:480px)]:flex-wrap md:grid md:grid-cols-[auto_auto]'
                 >
                     <CardTerroir text='Vulcânico' srcImage='/images/terroirs/vulcanico.jpg' altImage='Terroir Vulcânico' />
                     <CardTerroir text='Arenoso' srcImage='/images/terroirs/arenoso.jpg' altImage='Terroir Arenoso' />
