@@ -11,12 +11,12 @@ const AffectedGrapes = () => {
             <div className='grid gap-[30px] sm:grid-cols-[minmax(200px,1fr)_minmax(200px,1fr)] sm:grid-rows-[auto_400px_300px_300px]'>
                 <GrapeTerroir 
                     gridClassText='sm:col-span-2' gridClassImage='sm:col-span-2' 
-                    nameGrape={grapesInfo.riesling.nameGrape} 
+                    nameGrape={grapesInfo.riesling.grapeName} 
                     textGrape={grapesInfo.riesling.textInfoGrape} 
                     srcImage={grapesInfo.riesling.urlImageGrape} 
                 />
                 <GrapeTerroir gridClassText='sm:col-span-1 row-span-2 self-center' gridClassImage='sm:row-span-2'               
-                    nameGrape={grapesInfo.pinot_noir.nameGrape} 
+                    nameGrape={grapesInfo.pinot_noir.grapeName} 
                     textGrape={grapesInfo.pinot_noir.textInfoGrape} 
                     srcImage={grapesInfo.pinot_noir.urlImageGrape} 
                 />
