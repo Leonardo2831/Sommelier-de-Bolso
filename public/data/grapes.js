@@ -129,6 +129,26 @@ export const grapesInfo = {
         'Uva tinta rara, encontrada no sudoeste da França, na região de Jurançon. É conhecida por sua cor profunda e caráter rústico. Geralmente usada em pequenas quantidades em blends para adicionar cor e estrutura, não sendo comum encontrá-la como varietal.',
         ''
     ),
+    concord: createGrapeInfo(
+        'Concord',
+        'Arquétipo da uva americana, famosa pelo seu uso em sucos e geleias. Possui um aroma intenso e inconfundível conhecido como "foxado", resultante do composto antranilato de metila. Seus vinhos de mesa são simples, doces e com sabor que remete a "suco de uva de caixinha".',
+        'https://upload.wikimedia.org/wikipedia/commons/2/2c/Concord_grapes_in_bowl.jpg'
+    ),
+    niagara_rosada: createGrapeInfo(
+        'Niagara Rosada',
+        'Uma mutação somática da Niagara Branca, esta variedade se diferencia pela coloração rosada de sua casca. Mantém o perfil aromático "foxado" intenso e a doçura de sua versão branca, sendo muito apreciada para o consumo de mesa e produção de sucos rosados e vinhos de mesa suaves.',
+        'https://upload.wikimedia.org/wikipedia/commons/d/da/Uva_Niagara.JPG'
+    ),
+    isabel: createGrapeInfo(
+        'Isabel',
+        'Uma das uvas mais cultivadas no Brasil, especialmente no Sul, é a base para a maioria dos sucos de uva integrais e vinhos de mesa coloniais. É uma uva rústica, de alta produtividade, que gera vinhos com aromas primários muito diretos e o característico perfil "foxado".',
+        'https://mudasherculandia.com.br/wp-content/uploads/2023/03/Uva-Isabel.jpg'
+    ),
+    bordo: createGrapeInfo(
+        'Bordô',
+        'Famosa por sua capacidade de gerar sucos e vinhos de uma cor violeta extremamente profunda e opaca. Seu aroma "foxado" é um dos mais potentes entre as uvas labruscas, sendo apreciada por sua intensidade. É frequentemente usada para dar cor a outros vinhos e sucos.',
+        'https://imagens.ne10.uol.com.br/veiculos/_midias/jpg/2022/10/14/806x444/1_uv-21885396.jpg?20240417084713'
+    ),
 };
 
 export default grapesInfo;
