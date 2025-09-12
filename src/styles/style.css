@@ -247,7 +247,7 @@
 
     .content-responseIA b,
     .content-responseIA strong{
-        @apply text-[20px] font-semibold;
+        @apply text-lg font-semibold;
     }
 
     .content-responseIA a{
@@ -256,7 +256,7 @@
     }
 
     .content-responseIA ul{
-        @apply list-disc list-inside ml-6 my-3;
+        @apply list-disc list-outside ml-6 my-3;
     }
 
     .content-responseIA ol{
