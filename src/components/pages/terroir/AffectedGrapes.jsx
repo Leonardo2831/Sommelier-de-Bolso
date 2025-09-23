@@ -1,4 +1,3 @@
-import grapesInfo from '../../../../public/data/grapes.js';
 import GrapeTerroir from './GrapeTerroir';
 
 const AffectedGrapes = () => {
