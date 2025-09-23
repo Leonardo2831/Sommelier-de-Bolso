@@ -199,6 +199,19 @@
         @apply bg-gold;
     }
 
+    /* masonry */
+    .masonry-column {
+        @apply flex flex-col gap-4;
+    }
+
+    .masonry-column > div {
+        @apply mb-4;
+    }
+
+    .masonry-column img {
+        @apply object-cover w-full block rounded-md;
+    }
+
     /* style to ia generation */
     .content-responseIA h1,
     .content-responseIA h2,
