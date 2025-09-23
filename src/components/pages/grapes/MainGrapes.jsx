@@ -22,7 +22,7 @@ const MainGrapes = () => {
                     <img 
                         className='row-start-1 sm:row-auto sm:col-span-3 w-full h-full max-h-[500px] object-cover rounded-xl' 
                         src="/public/images/vitis-viniferas.png" 
-                        alt="Vitis Viniferas" 
+                        alt="Vitis Viniferas"
                     />
                     <img 
                         className='sm:col-span-2 w-full h-full max-h-[500px] object-cover rounded-xl' 
