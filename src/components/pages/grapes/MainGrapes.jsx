@@ -15,12 +15,12 @@ const MainGrapes = () => {
                     </h2>
                 </div>
                 <section 
-                    className='grid grid-cols-1 items-center gap-[30px] font-sans text-xl 
-                    text-light-gray dark:text-beige sm:gap-[20px] sm:grid-cols-6'
+                    className='grid grid-cols-1 gap-x-[20px] gap-y-[30px] font-sans text-xl 
+                    text-light-gray dark:text-beige sm:gap-x-[30px] sm:gap-y-[50px] sm:grid-cols-6'
                 >
                     <p className='sm:col-span-3'>A essência dos grandes vinhos está na Vitis vinifera, espécie ancestral originária da Europa e da região do Mediterrâneo, base de praticamente todos os vinhos finos do mundo. Sua estrutura é perfeita para a vinificação: a casca fornece cor e taninos, enquanto a polpa equilibra açúcares e acidez. Castas como Cabernet Sauvignon, Chardonnay e Pinot Noir traduzem essa herança, expressando a identidade do terroir em cada safra.</p>
                     <img 
-                        className='sm:col-span-3 w-full h-full max-h-[500px] object-cover rounded-xl' 
+                        className='row-start-1 sm:row-auto sm:col-span-3 w-full h-full max-h-[500px] object-cover rounded-xl' 
                         src="/public/images/vitis-viniferas.png" 
                         alt="Vitis Viniferas" 
                     />
