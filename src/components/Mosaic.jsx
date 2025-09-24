@@ -1,19 +1,18 @@
 import React from 'react';
-import Masonry from 'react-masonry-css';
-import { Link } from 'react-router-dom';
 import AppContext from '../contexts/AppContext';
+import MosaicImage from './pages/grapes/MosaicImage';
 
 const itemForPage = 8;
 
 const Mosaic = () => {
 
-    const { allItems, setAllItems } = React.useContext(AppContext);
+    const { allItems } = React.useContext(AppContext);
     const masonryContent = React.useRef(null);
 
     let [page, setPage] = React.useState(1);
     const [visibleItems, setVisibleItems] = React.useState([]);
 
-    const [mouseOnItem, setMouseOnItem] = React.useState(false);
+    let classItemMasonry;
 
     React.useEffect(() => {
         const newItems = allItems.slice((page - 1) * itemForPage, page * itemForPage);
@@ -22,34 +21,42 @@ const Mosaic = () => {
 
     return (
         <div className='flex flex-col items-center'>
-            <Masonry
+            <section
                 ref={masonryContent}
-                breakpointCols={{ default: 2, 768: 2, 480: 1 }}
-                className="mt-[50px] flex w-full gap-4"
-                columnClassName="masonry-column"
+                className="mt-[50px] columns-1 sm:columns-2 md:columns-3"
             >
                 {
                     visibleItems.map((item, index) => {
+                        if(index % 7 == 0) 
+                            classItemMasonry = 'w-full h-[500px] object-cover rounded-md';
+                        else if(index % 5 == 0) 
+                            classItemMasonry = 'w-full h-[400px] object-cover rounded-md';
+                        else if(index % 3 == 0) 
+                            classItemMasonry = 'w-full h-[300px] object-cover rounded-md';
+                        else if(index % 2 == 0) 
+                            classItemMasonry = 'w-full h-[200px] object-cover rounded-md';
+                        else 
+                            classItemMasonry = 'w-full h-[150px] object-cover rounded-md';
+
+
                         if(item.error){
-                            <p 
-                                key={index} 
-                                className="font-sans font-semibold text-light-gray dark:text-beige"
-                            >
-                                {item.messageError}
-                            </p>
-                        } else {
                             return (
-                                <Link key={index} to={item.grapeName} className='relative bottom-3 translate-[-50%,-50%]'>
-                                    <img src={item.url ? item.url : ''} alt={item.grapeName} />
-                                    <div className='absolute z-10'>{item.grapeName}</div>
-                                </Link>
-                            );
+                                <p 
+                                    key={index} 
+                                    className="font-sans font-semibold text-light-gray dark:text-beige"
+                                >
+                                    {item.messageError}
+                                </p>
+                            )
+                        } else {
+                            return <MosaicImage key={index} item={item} index={index} classItem={classItemMasonry} />;
                         }
                     })
                 }
-            </Masonry>
+            </section>
             <button 
-                className='mt-[50px] flex items-center gap-[15px] font-sans font-semibold bg-gold text-white text-[22px] py-3 px-6 rounded-md' 
+                className='mt-[50px] flex items-center gap-[15px] cursor-pointer
+                font-sans font-semibold bg-gold text-white text-[22px] py-3 px-6 rounded-md' 
                 onClick={() => setPage((prev) => prev + 1)}
             >
                 <p>Veja mais opções</p>
