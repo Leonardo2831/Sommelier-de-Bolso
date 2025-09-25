@@ -1,4 +1,5 @@
 import Head from '../../Head';
+import InputSearchGrape from './InputSearchGrape';
 import MosaicGrapes from './MosaicGrapes';
 
 const MainGrapes = () => {
@@ -21,7 +22,7 @@ const MainGrapes = () => {
                     <p className='sm:col-span-3'>A essência dos grandes vinhos está na Vitis vinifera, espécie ancestral originária da Europa e da região do Mediterrâneo, base de praticamente todos os vinhos finos do mundo. Sua estrutura é perfeita para a vinificação: a casca fornece cor e taninos, enquanto a polpa equilibra açúcares e acidez. Castas como Cabernet Sauvignon, Chardonnay e Pinot Noir traduzem essa herança, expressando a identidade do terroir em cada safra.</p>
                     <img 
                         className='row-start-1 sm:row-auto sm:col-span-3 w-full h-full max-h-[500px] object-cover rounded-xl' 
-                        src="/public/images/vitis-viniferas.png" 
+                        src="/images/vitis-viniferas.png" 
                         alt="Vitis Viniferas"
                     />
                     <img 
@@ -47,18 +48,7 @@ const MainGrapes = () => {
                         Procure a uva que quer saber mais
                         <span className='text-gold text-[64px]'>.</span>
                     </h2>
-                    <label 
-                        htmlFor='searchGrape' 
-                        className='relative rounded-md max-w-[440px] w-full bg-beige border-2 border-gold'
-                    >
-                        <img className='absolute p-3 right-0 top-0' src="/icons/microphone.svg" alt="Microphone" />
-                        <input 
-                            className='pl-4 pr-[48px] py-2 w-full font-sans text-xl' 
-                            id='searchGrape' 
-                            type="text" 
-                            placeholder='Cabernet Suavignon...' 
-                        />
-                    </label>
+                    <InputSearchGrape/>
                 </div>
                 <MosaicGrapes/>
             </main>
