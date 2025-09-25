@@ -199,6 +199,15 @@
         @apply bg-gold;
     }
 
+    /* tooltip */
+    .tooltip > div{
+        @apply hidden;
+    }
+
+    .tooltip:hover > div{
+        @apply block;
+    }
+
     /* style to ia generation */
     .content-responseIA h1,
     .content-responseIA h2,
