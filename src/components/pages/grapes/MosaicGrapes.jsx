@@ -2,41 +2,49 @@ import React from 'react';
 import AppContext from '../../../contexts/AppContext';
 import MosaicImage from './MosaicImage';
 
-const itemForPage = 8;
+const itemForPage = 9;
 
 const MosaicGrapes = () => {
-
     const { allItems } = React.useContext(AppContext);
-    const masonryContent = React.useRef(null);
+
+    const mosaicContent = React.useRef(null);
+    const refButton = React.useRef(null);
 
     let [page, setPage] = React.useState(1);
     const [visibleItems, setVisibleItems] = React.useState([]);
 
-    let classItemMasonry;
+    let classItemMosaic;
 
-    React.useEffect(() => {
-        const newItems = allItems.slice((page - 1) * itemForPage, page * itemForPage);
-        setVisibleItems((prev) => [...prev, ...newItems]);
+    React.useEffect(() => {        
+        if(allItems.length > 0){
+            const newItems = allItems.slice((page - 1) * itemForPage, page * itemForPage);
+
+            if(allItems.length <= newItems.length + visibleItems.length){
+                refButton.current.remove();
+            }
+
+            setVisibleItems([...visibleItems, ...newItems]); 
+        }
     }, [page, allItems]);
 
     return (
         <div className='flex flex-col items-center'>
             <section
-                ref={masonryContent}
+                ref={mosaicContent}
                 className="mt-[50px] columns-1 sm:columns-2 md:columns-3"
             >
                 {
                     visibleItems.map((item, index) => {
                         if(index % 7 == 0) 
-                            classItemMasonry = 'w-full h-[500px] object-cover rounded-md';
+                            classItemMosaic = 'w-full h-[500px] object-cover rounded-md';
                         else if(index % 5 == 0) 
-                            classItemMasonry = 'w-full h-[400px] object-cover rounded-md';
+                            classItemMosaic = 'w-full h-[400px] object-cover rounded-md';
                         else if(index % 3 == 0) 
-                            classItemMasonry = 'w-full h-[300px] object-cover rounded-md';
+                            classItemMosaic = 'w-full h-[300px] object-cover rounded-md';
                         else if(index % 2 == 0) 
-                            classItemMasonry = 'w-full h-[200px] object-cover rounded-md';
+                            classItemMosaic = 'w-full h-[200px] object-cover rounded-md';
                         else 
-                            classItemMasonry = 'w-full h-[150px] object-cover rounded-md';
+                            classItemMosaic = 'w-full h-[150px] object-cover rounded-md';
 
 
                         if(item.error){
@@ -49,12 +57,13 @@ const MosaicGrapes = () => {
                                 </p>
                             )
                         } else {
-                            return <MosaicImage key={index} item={item} index={index} classItem={classItemMasonry} />;
+                            return <MosaicImage key={index} item={item} index={index} classItem={classItemMosaic} />;
                         }
                     })
                 }
             </section>
             <button 
+                ref={refButton}
                 className='mt-[50px] flex items-center gap-[15px] cursor-pointer
                 font-sans font-semibold bg-gold text-white text-[22px] py-3 px-6 rounded-md' 
                 onClick={() => setPage((prev) => prev + 1)}
