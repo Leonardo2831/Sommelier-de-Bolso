@@ -1,10 +1,10 @@
 import React from 'react';
-import AppContext from '../contexts/AppContext';
-import MosaicImage from './pages/grapes/MosaicImage';
+import AppContext from '../../../contexts/AppContext';
+import MosaicImage from './MosaicImage';
 
 const itemForPage = 8;
 
-const Mosaic = () => {
+const MosaicGrapes = () => {
 
     const { allItems } = React.useContext(AppContext);
     const masonryContent = React.useRef(null);
@@ -66,4 +66,4 @@ const Mosaic = () => {
     )
 }
 
-export default Mosaic;
+export default MosaicGrapes;
