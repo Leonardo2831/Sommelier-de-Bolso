@@ -1,5 +1,5 @@
 import Head from '../../Head';
-import Mosaic from './../../Mosaic';
+import MosaicGrapes from './MosaicGrapes';
 
 const MainGrapes = () => {
     return (
@@ -60,7 +60,7 @@ const MainGrapes = () => {
                         />
                     </label>
                 </div>
-                <Mosaic/>
+                <MosaicGrapes/>
             </main>
         </>
     )
