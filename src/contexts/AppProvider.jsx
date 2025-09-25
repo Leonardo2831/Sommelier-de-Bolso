@@ -30,8 +30,15 @@ const AppProvider = ({ children }) => {
         requestImagesMasonry();
     }, []);
 
+    // has hover
+    const [hasHover, setHasHover] = React.useState(false);
+
+    React.useEffect(() => {
+        setHasHover(!('ontouchstart' in window))
+    }, []);
+
     return (
-        <AppContext.Provider value={{ mode , setMode, allItems, setAllItems }}>
+        <AppContext.Provider value={{ mode , setMode, allItems, setAllItems, hasHover, setHasHover }}>
             {children}
         </AppContext.Provider>
     )
