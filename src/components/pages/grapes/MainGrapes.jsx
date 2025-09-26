@@ -1,5 +1,4 @@
 import Head from '../../Head';
-import InputSearchGrape from './InputSearchGrape';
 import MosaicGrapes from './MosaicGrapes';
 
 const MainGrapes = () => {
@@ -42,14 +41,6 @@ const MainGrapes = () => {
                 <h3 className='text-[28px] font-medium text-light-gray dark:text-beige'>
                     Agora que você já sabe a base, explore as uvas e descubra o estilo que mais combina com você.
                 </h3>
-
-                <div className='flex flex-col justify-center items-center gap-[30px]'>
-                    <h2 className='text-center text-[40px] tracking-[0.4px] font-semibold text-gray dark:text-cream'>
-                        Procure a uva que quer saber mais
-                        <span className='text-gold text-[64px]'>.</span>
-                    </h2>
-                    <InputSearchGrape/>
-                </div>
                 <MosaicGrapes/>
             </main>
         </>
