@@ -1,78 +1,163 @@
 import React from 'react';
 import AppContext from '../../../contexts/AppContext';
 import MosaicImage from './MosaicImage';
+import Fuse from 'fuse.js';
 
 const itemForPage = 9;
 
-const MosaicGrapes = () => {
+const MosaicGrapes = React.forwardRef(() => {
     const { allItems } = React.useContext(AppContext);
 
-    const mosaicContent = React.useRef(null);
+    const refMosaicContent = React.useRef(null);
     const refButton = React.useRef(null);
 
-    let [page, setPage] = React.useState(1);
+    const [page, setPage] = React.useState(1);
     const [visibleItems, setVisibleItems] = React.useState([]);
 
     let classItemMosaic;
 
+    function choiceVisibleItems(){
+        const newItems = allItems.slice((page - 1) * itemForPage, page * itemForPage);
+
+        setVisibleItems([...visibleItems, ...newItems]); 
+
+        return newItems;
+    }
+
     React.useEffect(() => {        
         if(allItems.length > 0){
-            const newItems = allItems.slice((page - 1) * itemForPage, page * itemForPage);
+            const newItems = choiceVisibleItems();
 
             if(allItems.length <= newItems.length + visibleItems.length){
                 refButton.current.remove();
             }
-
-            setVisibleItems([...visibleItems, ...newItems]); 
         }
     }, [page, allItems]);
 
+    // input code
+    const [phoneUsing, setPhoneUsing] = React.useState(false);
+    const [valueInput, setValueInput] = React.useState('');
+
+    React.useEffect(() => {
+        if(allItems.length){
+            const fuse = new Fuse(allItems, { keys: ['id', 'grapeName'], threshold: 0 });
+            const resultsSearch = fuse.search(valueInput);
+
+            const choiceGrapes = resultsSearch.map((grape) => grape.item);
+
+            setVisibleItems(choiceGrapes);            
+        }
+
+        if(!valueInput.length) {
+            choiceVisibleItems();
+        }
+    }, [valueInput]);
+
+    function audioClient(){
+        const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition);
+
+        recognition.lang = navigator.language;
+
+        recognition.interimResults = false;
+
+        recognition.maxAlternatives = 1;
+
+        recognition.onresult = (event) => {
+            const transcript = event.results[0][0].transcript;
+
+            setValueInput(transcript);
+            setPhoneUsing(false);
+        };
+
+        recognition.onerror = () => {
+            if(refContentGrapes.current){
+                refContentGrapes.current.innerHTML = 
+                '<p>Houve um erro, talvez não temos em nossa base de dados essa uva, pedimos desculpas</p>';
+            }
+
+            setPhoneUsing(false);
+        };
+
+        recognition.start();
+    }
+
     return (
-        <div className='flex flex-col items-center'>
-            <section
-                ref={mosaicContent}
-                className="mt-[50px] columns-1 sm:columns-2 md:columns-3"
-            >
-                {
-                    visibleItems.map((item, index) => {
-                        if(index % 7 == 0) 
-                            classItemMosaic = 'w-full h-[500px] object-cover rounded-md';
-                        else if(index % 5 == 0) 
-                            classItemMosaic = 'w-full h-[400px] object-cover rounded-md';
-                        else if(index % 3 == 0) 
-                            classItemMosaic = 'w-full h-[300px] object-cover rounded-md';
-                        else if(index % 2 == 0) 
-                            classItemMosaic = 'w-full h-[200px] object-cover rounded-md';
-                        else 
-                            classItemMosaic = 'w-full h-[150px] object-cover rounded-md';
+        <>
+            <div className='flex flex-col justify-center items-center gap-[30px]'>
+                <h2 className='text-center text-[40px] tracking-[0.4px] font-semibold text-gray dark:text-cream'>
+                    Procure a uva que quer saber mais
+                    <span className='text-gold text-[64px]'>.</span>
+                </h2>
+                <label 
+                    htmlFor='searchGrape' 
+                    className='relative rounded-md max-w-[440px] w-full bg-beige border-2 border-gold'
+                >
+                    <img 
+                        onClick={() => {
+                            setPhoneUsing(true);
+                            audioClient();
+                        }}
+                        className=' cursor-pointer p-3 
+                        absolute right-0 top-0' 
+                        src="/icons/microphone.svg" 
+                        alt="Microphone" 
+                    />
+                    <input 
+                        onChange={(event) => setValueInput(event.currentTarget.value)}
+                        value={valueInput ? valueInput : ''}
+                        className='pl-4 pr-[48px] py-2 w-full font-sans text-xl' 
+                        id='searchGrape' 
+                        type="text" 
+                        placeholder='Cabernet Suavignon...' 
+                    />
+                </label>
+            </div>
+            <div className='flex flex-col items-center'>
+                <section
+                    ref={refMosaicContent}
+                    className="mt-[50px] columns-1 sm:columns-2 md:columns-3"
+                >
+                    {
+                        visibleItems.map((item, index) => {
+                            if(index % 7 == 0) 
+                                classItemMosaic = 'w-full h-[500px] object-cover rounded-md';
+                            else if(index % 5 == 0) 
+                                classItemMosaic = 'w-full h-[400px] object-cover rounded-md';
+                            else if(index % 3 == 0) 
+                                classItemMosaic = 'w-full h-[300px] object-cover rounded-md';
+                            else if(index % 2 == 0) 
+                                classItemMosaic = 'w-full h-[200px] object-cover rounded-md';
+                            else 
+                                classItemMosaic = 'w-full h-[150px] object-cover rounded-md';
 
 
-                        if(item.error){
-                            return (
-                                <p 
-                                    key={index} 
-                                    className="font-sans font-semibold text-light-gray dark:text-beige"
-                                >
-                                    {item.messageError}
-                                </p>
-                            )
-                        } else {
-                            return <MosaicImage key={index} item={item} index={index} classItem={classItemMosaic} />;
-                        }
-                    })
-                }
-            </section>
-            <button 
-                ref={refButton}
-                className='mt-[50px] flex items-center gap-[15px] cursor-pointer
-                font-sans font-semibold bg-gold text-white text-[22px] py-3 px-6 rounded-md' 
-                onClick={() => setPage((prev) => prev + 1)}
-            >
-                <p>Veja mais opções</p>
-                <img className='w-7 h-7' src="/icons/arrow.svg" alt="Seta para baixo"/>
-            </button>
-        </div>
+                            if(item.error){
+                                return (
+                                    <p 
+                                        key={index} 
+                                        className="font-sans font-semibold text-light-gray dark:text-beige"
+                                    >
+                                        {item.messageError}
+                                    </p>
+                                )
+                            } else {
+                                return <MosaicImage key={index} item={item} index={index} classItem={classItemMosaic} />;
+                            }
+                        })
+                    }
+                </section>
+                <button 
+                    ref={refButton}
+                    className='mt-[50px] flex items-center gap-[15px] cursor-pointer
+                    font-sans font-semibold bg-gold text-white text-[22px] py-3 px-6 rounded-md' 
+                    onClick={() => setPage((prev) => prev + 1)}
+                >
+                    <p>Veja mais opções</p>
+                    <img className='w-7 h-7' src="/icons/arrow.svg" alt="Seta para baixo"/>
+                </button>
+            </div>
+        </>
     )
-}
+});
 
 export default MosaicGrapes;
