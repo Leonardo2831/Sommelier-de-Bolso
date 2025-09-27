@@ -162,9 +162,9 @@ const MosaicGrapes = React.forwardRef(() => {
                             else if(index % 3 == 0) 
                                 classItemMosaic = 'w-full h-[300px] object-cover rounded-md';
                             else if(index % 2 == 0) 
-                                classItemMosaic = 'w-full h-[200px] object-cover rounded-md';
+                                classItemMosaic = 'w-full h-[250px] object-cover rounded-md';
                             else 
-                                classItemMosaic = 'w-full h-[150px] object-cover rounded-md';
+                                classItemMosaic = 'w-full h-[200px] object-cover rounded-md';
 
 
                             if(item.error){
