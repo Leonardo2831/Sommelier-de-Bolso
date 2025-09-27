@@ -12,6 +12,7 @@ const MosaicGrapes = React.forwardRef(() => {
     const refButton = React.useRef(null);
 
     const [page, setPage] = React.useState(1);
+    const [finishItems, setFinishItems] = React.useState(true);
     const [visibleItems, setVisibleItems] = React.useState([]);
 
     let classItemMosaic;
@@ -29,7 +30,7 @@ const MosaicGrapes = React.forwardRef(() => {
             const newItems = choiceVisibleItems();
 
             if(allItems.length <= newItems.length + visibleItems.length){
-                refButton.current.remove();
+                setFinishItems(false);
             }
         }
     }, [page, allItems]);
@@ -37,7 +38,7 @@ const MosaicGrapes = React.forwardRef(() => {
     // input code
     const [phoneUsing, setPhoneUsing] = React.useState(false);
     const [valueInput, setValueInput] = React.useState('');
-    const recognition = React.useRef(null);
+    const recognition = React.useRef(new (window.SpeechRecognition || window.webkitSpeechRecognition));
 
     React.useEffect(() => {
         if(allItems.length){
@@ -56,31 +57,31 @@ const MosaicGrapes = React.forwardRef(() => {
 
     // recognition audio on input
     React.useEffect(() => {
-        recognition.current = new (window.SpeechRecognition || window.webkitSpeechRecognition);
-
-        if(!recognition){
+        if(!recognition.current){
             refMosaicContent.current.innerHTML = 
                 '<p className="text-lg font-sans text-center text-gray dark:text-cream" >Usar microfone não é suportado neste navegador.</p>';
         }
     }, []);
 
-    function audioClient(){
+    function audioClient(){        
         setPhoneUsing(true);
 
-        recognition.lang = navigator.language;
+        recognition.current.lang = navigator.language;
 
-        recognition.interimResults = false;
+        recognition.current.interimResults = false;
 
-        recognition.maxAlternatives = 1;
+        recognition.current.maxAlternatives = 1;
 
-        recognition.onresult = (event) => {
+        recognition.current.onresult = (event) => {
             const transcript = event.results[0][0].transcript;
+
+            console.log(transcript);
 
             setValueInput(transcript);
             setPhoneUsing(false);
         };
 
-        recognition.onerror = () => {
+        recognition.current.onerror = () => {
             if(refMosaicContent.current){
                 refMosaicContent.current.innerHTML = 
                 '<p className="text-lg font-sans text-center text-gray dark:text-cream" >Houve um erro, talvez não temos em nossa base de dados essa uva, pedimos desculpas</p>';
@@ -93,7 +94,7 @@ const MosaicGrapes = React.forwardRef(() => {
     }
     
     function stopAudioClient(){        
-        if(recognition){
+        if(recognition.current){
             recognition.current.stop();
             setPhoneUsing(false);
         }
@@ -175,15 +176,18 @@ const MosaicGrapes = React.forwardRef(() => {
                         })
                     }
                 </section>
-                <button 
-                    ref={refButton}
-                    className='mt-[50px] flex items-center gap-[15px] cursor-pointer
-                    font-sans font-semibold bg-gold text-white text-[22px] py-3 px-6 rounded-md' 
-                    onClick={() => setPage((prev) => prev + 1)}
-                >
-                    <p>Veja mais opções</p>
-                    <img className='w-7 h-7' src="/icons/arrow.svg" alt="Seta para baixo"/>
-                </button>
+                {finishItems 
+                    && 
+                    <button 
+                        ref={refButton}
+                        className='mt-[50px] flex items-center gap-[15px] cursor-pointer
+                        font-sans font-semibold bg-gold text-white text-[22px] py-3 px-6 rounded-md' 
+                        onClick={() => setPage((prev) => prev + 1)}
+                    >
+                        <p>Veja mais opções</p>
+                        <img className='w-7 h-7' src="/icons/arrow.svg" alt="Seta para baixo"/>
+                    </button>
+                }
             </div>
         </>
     )
