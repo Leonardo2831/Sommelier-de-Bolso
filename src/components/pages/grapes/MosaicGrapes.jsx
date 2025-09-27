@@ -37,6 +37,7 @@ const MosaicGrapes = React.forwardRef(() => {
     // input code
     const [phoneUsing, setPhoneUsing] = React.useState(false);
     const [valueInput, setValueInput] = React.useState('');
+    const recognition = React.useRef(null);
 
     React.useEffect(() => {
         if(allItems.length){
@@ -53,8 +54,18 @@ const MosaicGrapes = React.forwardRef(() => {
         }
     }, [valueInput]);
 
+    // recognition audio on input
+    React.useEffect(() => {
+        recognition.current = new (window.SpeechRecognition || window.webkitSpeechRecognition);
+
+        if(!recognition){
+            refMosaicContent.current.innerHTML = 
+                '<p className="text-lg font-sans text-center text-gray dark:text-cream" >Usar microfone não é suportado neste navegador.</p>';
+        }
+    }, []);
+
     function audioClient(){
-        const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition);
+        setPhoneUsing(true);
 
         recognition.lang = navigator.language;
 
@@ -70,16 +81,25 @@ const MosaicGrapes = React.forwardRef(() => {
         };
 
         recognition.onerror = () => {
-            if(refContentGrapes.current){
-                refContentGrapes.current.innerHTML = 
-                '<p>Houve um erro, talvez não temos em nossa base de dados essa uva, pedimos desculpas</p>';
+            if(refMosaicContent.current){
+                refMosaicContent.current.innerHTML = 
+                '<p className="text-lg font-sans text-center text-gray dark:text-cream" >Houve um erro, talvez não temos em nossa base de dados essa uva, pedimos desculpas</p>';
             }
 
             setPhoneUsing(false);
         };
 
-        recognition.start();
+        recognition.current.start();
     }
+    
+    function stopAudioClient(){        
+        if(recognition){
+            recognition.current.stop();
+            setPhoneUsing(false);
+        }
+    }
+
+    const classMicImage = 'cursor-pointer p-3 absolute right-0 top-0';
 
     return (
         <>
@@ -92,16 +112,25 @@ const MosaicGrapes = React.forwardRef(() => {
                     htmlFor='searchGrape' 
                     className='relative rounded-md max-w-[440px] w-full bg-beige border-2 border-gold'
                 >
-                    <img 
-                        onClick={() => {
-                            setPhoneUsing(true);
-                            audioClient();
-                        }}
-                        className=' cursor-pointer p-3 
-                        absolute right-0 top-0' 
-                        src="/icons/microphone.svg" 
-                        alt="Microphone" 
-                    />
+                    {
+                        !phoneUsing 
+                        ? 
+                        <img 
+                            onClick={() => {
+                                audioClient();
+                            }}
+                            className={classMicImage}
+                            src="/icons/microphone.svg" 
+                            alt="Microphone" 
+                        />
+                        :
+                        <img 
+                            onClick={() => stopAudioClient()}
+                            src="/icons/stop-audio.svg" 
+                            alt="Parar de gravar" 
+                            className={classMicImage}    
+                        />
+                    }
                     <input 
                         onChange={(event) => setValueInput(event.currentTarget.value)}
                         value={valueInput ? valueInput : ''}
