@@ -75,8 +75,6 @@ const MosaicGrapes = React.forwardRef(() => {
         recognition.current.onresult = (event) => {
             const transcript = event.results[0][0].transcript;
 
-            console.log(transcript);
-
             setValueInput(transcript);
             setPhoneUsing(false);
         };
