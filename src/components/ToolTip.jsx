@@ -45,7 +45,7 @@ const ToolTip = ({ item }) => {
     return (
         <div 
             ref={toolTipRef}
-            className={`h-fit w-fit max-w-[180px] font-sans font-semibold text-lg sm:text-xl
+            className={`h-fit w-fit max-w-[200px] font-sans font-semibold text-lg sm:text-xl
             ${!hasHover ? '!block' : ''}
             bg-[rgba(64,64,64,0.8)] text-center text-white rounded-md px-5 py-3
             shadow-[0_0_2px_6px_rgba(64,64,64,0.8),0_0_0_2px_#C3A576_inset]
