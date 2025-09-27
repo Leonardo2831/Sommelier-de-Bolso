@@ -12,7 +12,7 @@ const MosaicGrapes = React.forwardRef(() => {
     const refButton = React.useRef(null);
 
     const [page, setPage] = React.useState(1);
-    const [finishItems, setFinishItems] = React.useState(true);
+    const [finishItems, setFinishItems] = React.useState(false);
     const [visibleItems, setVisibleItems] = React.useState([]);
 
     let classItemMosaic;
@@ -29,13 +29,13 @@ const MosaicGrapes = React.forwardRef(() => {
         if(allItems.length > 0){
             const newItems = choiceVisibleItems();
 
-            if(allItems.length <= newItems.length + visibleItems.length){
-                setFinishItems(false);
-            }
+            if(allItems.length <= newItems.length + visibleItems.length){                
+                setFinishItems(true);
+            }       
         }
     }, [page, allItems]);
 
-    // input code
+    // input code audio
     const [phoneUsing, setPhoneUsing] = React.useState(false);
     const [valueInput, setValueInput] = React.useState('');
     const recognition = React.useRef(new (window.SpeechRecognition || window.webkitSpeechRecognition));
@@ -50,10 +50,15 @@ const MosaicGrapes = React.forwardRef(() => {
             setVisibleItems(choiceGrapes);            
         }
 
+        if(valueInput === '') {
+            setPage(1);
+            setFinishItems(false);
+        }
+
         if(!valueInput.length) {
             choiceVisibleItems();
         }
-    }, [valueInput]);
+    }, [allItems, valueInput]);
 
     // recognition audio on input
     React.useEffect(() => {
@@ -79,6 +84,10 @@ const MosaicGrapes = React.forwardRef(() => {
             setPhoneUsing(false);
         };
 
+        recognition.current.onend = () => {
+            setPhoneUsing(false);
+        };
+
         recognition.current.onerror = () => {
             if(refMosaicContent.current){
                 refMosaicContent.current.innerHTML = 
@@ -94,7 +103,6 @@ const MosaicGrapes = React.forwardRef(() => {
     function stopAudioClient(){        
         if(recognition.current){
             recognition.current.stop();
-            setPhoneUsing(false);
         }
     }
 
@@ -174,7 +182,7 @@ const MosaicGrapes = React.forwardRef(() => {
                         })
                     }
                 </section>
-                {finishItems 
+                {!finishItems 
                     && 
                     <button 
                         ref={refButton}
